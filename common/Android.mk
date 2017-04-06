@@ -16,7 +16,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(TARGET_DEVICE),)
+ifeq ($(TARGET_DEVICE),)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := GoogleContactsSyncAdapter
