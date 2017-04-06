@@ -16,7 +16,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(TARGET_DEVICE),)
+ifneq ($(filter arm64,$(TARGET_ARCH)),)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := PrebuiltGmsCore

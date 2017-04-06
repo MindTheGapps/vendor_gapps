@@ -32,10 +32,10 @@ fi
 . "$HELPER"
 
 # Initialize the helper for common gapps
-setup_vendor "$GAPPS_COMMON" "$VENDOR" "$CM_ROOT"
+setup_vendor "$GAPPS_COMMON" "$VENDOR" "$CM_ROOT" true
 
 # Copyright headers
-write_headers
+write_headers "arm arm64 x86"
 
 # Common gapps
 write_makefiles "$MY_DIR"/common-proprietary-files.txt
@@ -44,10 +44,10 @@ write_makefiles "$MY_DIR"/common-proprietary-files.txt
 write_footers
 
 # Reinitialize the helper for target gapps
-setup_vendor "$TARGET" "$VENDOR" "$CM_ROOT"
+setup_vendor "$TARGET" "$VENDOR" "$CM_ROOT" true
 
 # Copyright headers and guards
-write_headers
+write_headers "$TARGET"
 
 write_makefiles "$MY_DIR"/proprietary-files-$TARGET.txt
 write_makefiles "$MY_DIR"/proprietary-files.txt
@@ -57,4 +57,4 @@ printf '\n%s\n' "\$(call inherit-product, vendor/gapps/common/common-vendor.mk)"
 # We are done with target
 write_footers
 
-for f in `find "$MY_DIR" -type f -name Android.mk`; do sed -i s/ifeq/ifneq/g $f; done
+for f in `find "$MY_DIR" -type f -name Android.mk`; do sed -i s/TARGET_DEVICE/TARGET_ARCH/g $f; done
