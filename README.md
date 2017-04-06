@@ -1,4 +1,4 @@
-# vendor_google
+# vendor_gapps
 
 **GApps for android devices**
 
@@ -10,11 +10,11 @@ You can compile your GApps package with GNU make
 _make distclean_
 - Remove output directory
 
-_make arm_
+_make gapps_arm_
 - compile signed flashable GApps for arm
 
-_make arm64_
+_make gapps_arm64_
 - compile signed flashable GApps for arm64
 
-_make x86_
+_make gapps_x86_
 - compile signed flashable GApps for x86 (NOT supported atm)
