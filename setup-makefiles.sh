@@ -52,5 +52,9 @@ write_headers
 write_makefiles "$MY_DIR"/proprietary-files-$TARGET.txt
 write_makefiles "$MY_DIR"/proprietary-files.txt
 
+printf '\n%s\n' "\$(call inherit-product, vendor/gapps/common/common-vendor.mk)" >> "$PRODUCTMK"
+
 # We are done with target
 write_footers
+
+for f in `find "$MY_DIR" -type f -name Android.mk`; do sed -i s/ifeq/ifneq/g $f; done
