@@ -12,7 +12,7 @@ ANDROIDV=7.1.1
 OUT=$TOP/out
 BUILD=$TOP/build
 METAINF=$BUILD/meta
-COMMON=$TOP/common/proprietary/
+COMMON=$TOP/common/proprietary
 GLOG=/tmp/gapps_log
 
 ##
@@ -44,21 +44,21 @@ function create() {
     echo "ARCH= $GARCH" >> $GLOG
     echo "OS= $(uname -s -r)" >> $GLOG
     echo "NAME= $(whoami) at $(uname -n)" >> $GLOG
-    PREBUILT=$TOP/$GARCH/proprietary/
+    PREBUILT=$TOP/$GARCH/proprietary
     test -d $OUT || mkdir $OUT;
     test -d $OUT/$GARCH || mkdir -p $OUT/$GARCH
     echo "Build directories are now ready" >> $GLOG
     echo "Getting prebuilts..."
-    echo "Copying stuffs" >> $GLOG
-    cp -r $PREBUILT $OUT/$GARCH >> $GLOG
-    mv $OUT/$GARCH/$GARCH $OUT/$GARCH/arch >> $GLOG
-    cp -r $COMMON $OUT/$GARCH >> $GLOG
+    echo "Copying stuff" >> $GLOG
+    cp -r $PREBUILT/* $OUT/$GARCH >> $GLOG
+    cp -r $COMMON/* $OUT/$GARCH >> $GLOG
 }
 
 function zipit() {
     BUILDZIP=gapps-$ANDROIDV-$GARCH-$DATE.zip
     echo "Importing installation scripts..."
-    cp -r $METAINF $OUT/$GARCH/META-INF && echo "Meta copied" >> $GLOG
+    test -d $OUT/$GARCH/META-INF || mkdir $OUT/$GARCH/META-INF;
+    cp -r $METAINF/* $OUT/$GARCH/META-INF/ && echo "Meta copied" >> $GLOG
     echo "Creating package..."
     cd $OUT/$GARCH
     zip -r /tmp/$BUILDZIP . >> $GLOG
