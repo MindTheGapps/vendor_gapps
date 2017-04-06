@@ -1,5 +1,6 @@
 #!/bin/bash
 # (c) Joey Rizzoli, 2015
+# (c) Paul Keith, 2017
 # Released under GPL v2 License
 
 ##
@@ -7,11 +8,11 @@
 #
 DATE=$(date +%F-%H-%M)
 TOP=$(realpath .)
-ANDROIDV=5.1
+ANDROIDV=7.1.1
 OUT=$TOP/out
 BUILD=$TOP/build
 METAINF=$BUILD/meta
-COMMON=$TOP/prebuilt/gapps/common
+COMMON=$TOP/common/proprietary/
 GLOG=/tmp/gapps_log
 
 ##
@@ -43,7 +44,7 @@ function create(){
     echo "ARCH= $GARCH" >> $GLOG
     echo "OS= $(uname -s -r)" >> $GLOG
     echo "NAME= $(whoami) at $(uname -n)" >> $GLOG
-    PREBUILT=$TOP/prebuilt/gapps/$GARCH
+    PREBUILT=$TOP/$GARCH/proprietary/
     test -d $OUT || mkdir $OUT;
     test -d $OUT/$GARCH || mkdir -p $OUT/$GARCH
     echo "Build directories are now ready" >> $GLOG
@@ -96,7 +97,7 @@ LASTRETURN=$?
 if [ -x $(which realpath) ]; then
     echo "Realpath found!" >> $GLOG
 else
-    TOP=$(cd . && pwd) # some os X love
+    TOP=$(cd . && pwd) # some darwin love
     echo "No realpath found!" >> $GLOG
 fi
 if [ "$LASTRETURN" == 0 ]; then
