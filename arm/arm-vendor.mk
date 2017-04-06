@@ -20,3 +20,5 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     PrebuiltGmsCore \
     SetupWizard
+
+$(call inherit-product, vendor/gapps/common/common-vendor.mk)
