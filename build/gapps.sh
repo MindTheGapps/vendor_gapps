@@ -18,27 +18,27 @@ GLOG=/tmp/gapps_log
 ##
 # functions
 #
-function printerr(){
+function printerr() {
   echo "$(tput setaf 1)$1$(tput sgr 0)"
 }
 
-function printdone(){
+function printdone() {
   echo "$(tput setaf 2)$1$(tput sgr 0)"
 }
 
-function clean(){
+function clean() {
     echo "Cleaning up..."
     rm -r $OUT/$GARCH
     rm /tmp/$BUILDZIP
     return $?
 }
 
-function Gfailed(){
+function Gfailed() {
     printerr "Build failed, check $GLOG"
     exit 1
 }
 
-function create(){
+function create() {
     test -f $GLOG && rm -f $GLOG
     echo "Starting GApps compilation" > $GLOG
     echo "ARCH= $GARCH" >> $GLOG
@@ -55,7 +55,7 @@ function create(){
     cp -r $COMMON $OUT/$GARCH >> $GLOG
 }
 
-function zipit(){
+function zipit() {
     BUILDZIP=gapps-$ANDROIDV-$GARCH-$DATE.zip
     echo "Importing installation scripts..."
     cp -r $METAINF $OUT/$GARCH/META-INF && echo "Meta copied" >> $GLOG
@@ -74,7 +74,7 @@ function zipit(){
     fi
 }
 
-function getmd5(){
+function getmd5() {
     if [ -x $(which md5sum) ]; then
         echo "md5sum is installed, getting md5..." >> $GLOG
         echo "Getting md5sum..."
