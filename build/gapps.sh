@@ -47,11 +47,12 @@ function create() {
     PREBUILT=$TOP/$GARCH/proprietary
     test -d $OUT || mkdir $OUT;
     test -d $OUT/$GARCH || mkdir -p $OUT/$GARCH
+    test -d $OUT/$GARCH/system || mkdir -p $OUT/$GARCH/system
     echo "Build directories are now ready" >> $GLOG
     echo "Getting prebuilts..."
     echo "Copying stuff" >> $GLOG
-    cp -r $PREBUILT/* $OUT/$GARCH >> $GLOG
-    cp -r $COMMON/* $OUT/$GARCH >> $GLOG
+    cp -r $PREBUILT/* $OUT/$GARCH/system >> $GLOG
+    cp -r $COMMON/* $OUT/$GARCH/system >> $GLOG
 }
 
 function zipit() {
