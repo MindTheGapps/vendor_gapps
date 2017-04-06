@@ -8,7 +8,7 @@
 #
 DATE=$(date +%F-%H-%M)
 TOP=$(realpath .)
-ANDROIDV=7.1.1
+ANDROIDV=7.1.2
 OUT=$TOP/out
 BUILD=$TOP/build
 METAINF=$BUILD/meta
