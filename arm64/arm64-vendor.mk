@@ -19,7 +19,6 @@ PRODUCT_COPY_FILES += \
     vendor/gapps/arm64/proprietary/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
 
 PRODUCT_PACKAGES += \
-    PrebuiltGmsCore \
-    SetupWizard
+    PrebuiltGmsCore
 
 $(call inherit-product, vendor/gapps/common/common-vendor.mk)

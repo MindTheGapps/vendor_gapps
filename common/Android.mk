@@ -149,6 +149,18 @@ LOCAL_PRIVILEGED_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := SetupWizard
+LOCAL_MODULE_OWNER := gapps
+LOCAL_SRC_FILES := proprietary/SetupWizard/SetupWizard.apk
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+LOCAL_PRIVILEGED_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := com.google.android.maps
 LOCAL_MODULE_OWNER := gapps
 LOCAL_SRC_FILES := proprietary/framework/com.google.android.maps.jar

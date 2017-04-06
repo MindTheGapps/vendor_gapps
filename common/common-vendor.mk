@@ -35,6 +35,7 @@ PRODUCT_PACKAGES += \
     GooglePartnerSetup \
     GoogleServicesFramework \
     Phonesky \
+    SetupWizard \
     com.google.android.maps \
     com.google.android.media.effects \
     com.google.widevine.software.drm

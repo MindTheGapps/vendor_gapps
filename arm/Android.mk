@@ -16,24 +16,12 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(TARGET_DEVICE),)
+ifeq ($(TARGET_DEVICE),)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := PrebuiltGmsCore
 LOCAL_MODULE_OWNER := gapps
 LOCAL_SRC_FILES := proprietary/PrebuiltGmsCore/PrebuiltGmsCore.apk
-LOCAL_CERTIFICATE := PRESIGNED
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_DEX_PREOPT := false
-LOCAL_MODULE_SUFFIX := .apk
-LOCAL_PRIVILEGED_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := SetupWizard
-LOCAL_MODULE_OWNER := gapps
-LOCAL_SRC_FILES := proprietary/SetupWizard/SetupWizard.apk
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS

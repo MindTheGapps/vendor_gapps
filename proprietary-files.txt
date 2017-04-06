@@ -1,2 +1,1 @@
 -priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk:PRESIGNED
--priv-app/SetupWizard/SetupWizard.apk:PRESIGNED
