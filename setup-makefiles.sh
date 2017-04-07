@@ -18,6 +18,9 @@
 
 set -e
 
+export GAPPS_COMMON=common
+export VENDOR=gapps
+
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
@@ -30,6 +33,19 @@ if [ ! -f "$HELPER" ]; then
     exit 1
 fi
 . "$HELPER"
+
+while [ "$1" != "" ]; do
+    case $1 in
+        -t | --target )         shift
+                                export TARGET=$1
+    esac
+    shift
+done
+
+if [ -z "$TARGET" ]; then
+    echo "Warning, target for extraction not specified, defaulting to arm"
+    TARGET=arm
+fi
 
 # Initialize the helper for common gapps
 setup_vendor "$GAPPS_COMMON" "$VENDOR" "$CM_ROOT" true

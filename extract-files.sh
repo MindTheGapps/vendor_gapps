@@ -65,4 +65,4 @@ setup_vendor "$TARGET" "$VENDOR" "$CM_ROOT"
 
 extract "$MY_DIR"/proprietary-files-$TARGET.txt "$SRC"
 
-"$MY_DIR"/setup-makefiles.sh
+"$MY_DIR"/setup-makefiles.sh -t $TARGET
