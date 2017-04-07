@@ -14,6 +14,7 @@ BUILD=$TOP/build
 METAINF=$BUILD/meta
 COMMON=$TOP/common/proprietary
 GLOG=/tmp/gapps_log
+ADDOND=$TOP/addond.sh
 
 ##
 # functions
@@ -53,6 +54,26 @@ function create() {
     echo "Copying stuff" >> $GLOG
     cp -r $PREBUILT/* $OUT/$GARCH/system >> $GLOG
     cp -r $COMMON/* $OUT/$GARCH/system >> $GLOG
+    echo "Generating addon.d script" >> $GLOG
+    test -d $OUT/$GARCH/system/addon.d || mkdir -p $OUT/$GARCH/system/addon.d
+    test -f $ADDOND && rm -f $ADDOND
+    cat $TOP/addond_head > $ADDOND
+    for txt_file in common-proprietary-files proprietary-files-$GARCH proprietary-files
+    do
+        cat $TOP/$txt_file.txt | while read l
+        do
+            if [ "$l" != "" ]; then
+                line=$(echo "$l" | sed 's/^-//g')
+                line=${line%%:*}
+                echo "$line" >> $ADDOND.tmp
+            fi
+        done
+    done
+    cat $ADDOND.tmp | LC_ALL=C sort | uniq >> $ADDOND
+    rm $ADDOND.tmp
+    cat $TOP/addond_tail >> $ADDOND
+    chmod 755 $ADDOND
+    mv $ADDOND $OUT/$GARCH/system/addon.d/30-gapps.sh
 }
 
 function zipit() {
