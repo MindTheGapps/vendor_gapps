@@ -80,8 +80,8 @@ function getmd5() {
         echo "md5sum is installed, getting md5..." >> $GLOG
         echo "Getting md5sum..."
         GMD5=$(md5sum $OUT/$BUILDZIP)
-        echo -e "$GMD5" > $OUT/gapps-$ANDROIDV-$GARCH-$DATE.md5
-        echo "md5 exported at $OUT/gapps-$ANDROIDV-$GARCH-$DATE.md5"
+        echo -e "$GMD5" > $OUT/gapps-$ANDROIDV-$GARCH-$DATE.zip.md5sum
+        echo "md5 exported at $OUT/gapps-$ANDROIDV-$GARCH-$DATE.zip.md5sum"
         return 0
     else
         echo "md5sum is not installed, aborting" >> $GLOG
