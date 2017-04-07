@@ -26,7 +26,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     GoogleContactsSyncAdapter \
     GoogleExtShared \
-    ConfigUpdater \
     GoogleBackupTransport \
     GoogleExtServices \
     GoogleFeedback \
