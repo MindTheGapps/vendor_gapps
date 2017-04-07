@@ -64,6 +64,7 @@ function create() {
         do
             if [ "$l" != "" ]; then
                 line=$(echo "$l" | sed 's/^-//g')
+                line=${line%%|*}
                 line=${line%%:*}
                 echo "$line" >> $ADDOND.tmp
             fi
