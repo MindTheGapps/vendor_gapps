@@ -58,12 +58,11 @@ fi
 # Initialize the helper for common gapps
 setup_vendor "$GAPPS_COMMON" "$VENDOR" "$CM_ROOT"
 
-extract "$MY_DIR"/common-proprietary-files.txt "$SRC"
+extract "$MY_DIR"/proprietary-files-common.txt "$SRC"
 
 # Reinitialize the helper for target gapps
 setup_vendor "$TARGET" "$VENDOR" "$CM_ROOT"
 
 extract "$MY_DIR"/proprietary-files-$TARGET.txt "$SRC"
-extract "$MY_DIR"/proprietary-files.txt "$SRC"
 
 "$MY_DIR"/setup-makefiles.sh

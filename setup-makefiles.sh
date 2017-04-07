@@ -38,7 +38,7 @@ setup_vendor "$GAPPS_COMMON" "$VENDOR" "$CM_ROOT" true
 write_headers "arm arm64 x86"
 
 # Common gapps
-write_makefiles "$MY_DIR"/common-proprietary-files.txt
+write_makefiles "$MY_DIR"/proprietary-files-common.txt
 
 # We are done with common
 write_footers
@@ -50,7 +50,6 @@ setup_vendor "$TARGET" "$VENDOR" "$CM_ROOT" true
 write_headers "$TARGET"
 
 write_makefiles "$MY_DIR"/proprietary-files-$TARGET.txt
-write_makefiles "$MY_DIR"/proprietary-files.txt
 
 printf '\n%s\n' "\$(call inherit-product, vendor/gapps/common/common-vendor.mk)" >> "$PRODUCTMK"
 

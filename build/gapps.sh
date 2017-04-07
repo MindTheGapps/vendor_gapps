@@ -58,7 +58,7 @@ function create() {
     test -d $OUT/$GARCH/system/addon.d || mkdir -p $OUT/$GARCH/system/addon.d
     test -f $ADDOND && rm -f $ADDOND
     cat $TOP/addond_head > $ADDOND
-    for txt_file in common-proprietary-files proprietary-files-$GARCH proprietary-files
+    for txt_file in proprietary-files-common proprietary-files-$GARCH
     do
         cat $TOP/$txt_file.txt | while read l
         do
