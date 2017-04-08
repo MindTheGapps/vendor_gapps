@@ -69,7 +69,7 @@ function create() {
 }
 
 function zipit() {
-    BUILDZIP=gapps-$ANDROIDV-$GARCH-$DATE.zip
+    BUILDZIP=MindTheGapps-$ANDROIDV-$GARCH-$DATE.zip
     echo "Importing installation scripts..."
     test -d $OUT/$GARCH/META-INF || mkdir $OUT/$GARCH/META-INF;
     cp -r $METAINF/* $OUT/$GARCH/META-INF/ && echo "Meta copied" >> $GLOG

@@ -16,7 +16,7 @@ set_owner() {
 }
 
 ui_print "*****************"
-ui_print "Gapps installer"
+ui_print "MindTheGapps installer"
 ui_print "*****************"
 
 ui_print "Mounting /system"
