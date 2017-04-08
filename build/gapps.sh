@@ -9,6 +9,7 @@
 DATE=$(date +%F-%H-%M)
 TOP=$(realpath .)
 ANDROIDV=7.1.2
+GARCH=$1
 OUT=$TOP/out
 BUILD=$TOP/build
 METAINF=$BUILD/meta
@@ -19,14 +20,6 @@ ADDOND=$TOP/addond.sh
 ##
 # functions
 #
-function printerr() {
-  echo "$(tput setaf 1)$1$(tput sgr 0)"
-}
-
-function printdone() {
-  echo "$(tput setaf 2)$1$(tput sgr 0)"
-}
-
 function clean() {
     echo "Cleaning up..."
     rm -r $OUT/$GARCH
@@ -34,8 +27,8 @@ function clean() {
     return $?
 }
 
-function Gfailed() {
-    printerr "Build failed, check $GLOG"
+function failed() {
+    echo "Build failed, check $GLOG"
     exit 1
 }
 
@@ -58,10 +51,8 @@ function create() {
     test -d $OUT/$GARCH/system/addon.d || mkdir -p $OUT/$GARCH/system/addon.d
     test -f $ADDOND && rm -f $ADDOND
     cat $TOP/addond_head > $ADDOND
-    for txt_file in proprietary-files-common proprietary-files-$GARCH
-    do
-        cat $TOP/$txt_file.txt | while read l
-        do
+    for txt_file in proprietary-files-common proprietary-files-$GARCH; do
+        cat $TOP/$txt_file.txt | while read l; do
             if [ "$l" != "" ]; then
                 line=$(echo "$l" | sed 's/^-//g')
                 line=${line%%|*}
@@ -91,7 +82,7 @@ function zipit() {
         echo "Signing zip..."
         java -Xmx2048m -jar $TOP/build/sign/signapk.jar -w $TOP/build/sign/testkey.x509.pem $TOP/build/sign/testkey.pk8 /tmp/$BUILDZIP $OUT/$BUILDZIP >> $GLOG
     else
-        printerr "Couldn't zip files!"
+        echo "Couldn't zip files!"
         echo "Couldn't find unsigned zip file, aborting" >> $GLOG
         return 1
     fi
@@ -102,8 +93,8 @@ function getmd5() {
         echo "md5sum is installed, getting md5..." >> $GLOG
         echo "Getting md5sum..."
         GMD5=$(md5sum $OUT/$BUILDZIP)
-        echo -e "$GMD5" > $OUT/gapps-$ANDROIDV-$GARCH-$DATE.zip.md5sum
-        echo "md5 exported at $OUT/gapps-$ANDROIDV-$GARCH-$DATE.zip.md5sum"
+        echo -e "$GMD5" > $OUT/$BUILDZIP.md5sum
+        echo "md5 exported at $OUT/$BUILDZIP.md5sum"
         return 0
     else
         echo "md5sum is not installed, aborting" >> $GLOG
@@ -114,37 +105,23 @@ function getmd5() {
 ##
 # main
 #
-GARCH=$1
-create
-LASTRETURN=$?
 if [ -x $(which realpath) ]; then
     echo "Realpath found!" >> $GLOG
 else
     TOP=$(cd . && pwd) # some darwin love
     echo "No realpath found!" >> $GLOG
 fi
-if [ "$LASTRETURN" == 0 ]; then
-    zipit
-    LASTRETURN=$?
-    if [ "$LASTRETURN" == 0 ]; then
-        getmd5
-        LASTRETURN=$?
-        if [ "$LASTRETURN" == 0 ]; then
-            clean
-            LASTRETURN=$?
-            if [ "$LASTRETURN" == 0 ]; then
-                echo "Done!" >> $GLOG
-                printdone "Build completed: $GMD5"
-                exit 0
-            else
-                Gfailed
-            fi
-        else
-            Gfailed
-        fi
+
+for func in create zipit getmd5 clean; do
+    $func
+    ret=$?
+    if [ "$ret" == 0 ]; then
+        continue
     else
-        Gfailed
+        failed
     fi
-else
-    Gfailed
-fi
+done
+
+echo "Done!" >> $GLOG
+echo "Build completed: $GMD5"
+exit 0
