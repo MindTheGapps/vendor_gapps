@@ -25,9 +25,9 @@ ui_print() {
   echo "ui_print" > "$OUTFD";
 }
 
-ui_print "*****************"
+ui_print "**********************"
 ui_print "MindTheGapps installer"
-ui_print "*****************"
+ui_print "**********************"
 
 ui_print "Mounting /system"
 
