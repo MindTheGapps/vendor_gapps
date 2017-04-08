@@ -22,23 +22,23 @@ ui_print "*****************"
 ui_print "Mounting /system"
 
 if mount /system; then
-    ui_print "/system mounted"
+   ui_print "/system mounted"
 else
-# Try to get the block from /etc/recovery.fstab
-block=`cat /etc/recovery.fstab | cut -d '#' -f 1 | grep /system | grep -o '/dev/[^ ]*' | head -1`
-if [ -n "$block" ] && mount $block /system; then
+  # Try to get the block from /etc/recovery.fstab
+  block=`cat /etc/recovery.fstab | cut -d '#' -f 1 | grep /system | grep -o '/dev/[^ ]*' | head -1`
+  if [ -n "$block" ] && mount $block /system; then
     ui_print "Could not mount /system! Aborting..."
     exit 1
-else
+  else
     ui_print "/system mounted"
-fi
+  fi
 fi
 
 if [ -f /system/bin/toybox ]; then
-UTILS=/system/bin/toybox
+  UTILS=/system/bin/toybox
 else
-ui_print "Could not find /system/bin/toybox! Aborting..."
-exit 1
+  ui_print "Could not find /system/bin/toybox! Aborting..."
+  exit 1
 fi
 
 
@@ -49,24 +49,24 @@ cd system
 unzip -o "$ZIP"
 DIRS="addon.d app priv-app framework etc lib"
 if [ -d /system/lib64 ]; then
-DIRS="$DIRS lib64"
+  DIRS="$DIRS lib64"
 fi
 for dirs in $DIRS; do
-set_perm 0755 $dir
-for d in `$UTILS find ./$dir -type d`; do
-set_perm 0755 $d
-set_owner system system $d
-done
-for f in `$UTILS find ./$dir -type f`; do
-type=$(echo "$f" | sed 's/.*\.//')
-if [ "$type" == "sh" ] || [ "$type" == "$f" ]; then
-set_perm 0755 $f
-else
-set_perm 0644 $f
-fi
-set_owner system system $f
-set_con system_file $f
-done
+  set_perm 0755 $dir
+  for d in `$UTILS find ./$dir -type d`; do
+    set_perm 0755 $d
+    set_owner system system $d
+  done
+  for f in `$UTILS find ./$dir -type f`; do
+    type=$(echo "$f" | sed 's/.*\.//')
+    if [ "$type" == "sh" ] || [ "$type" == "$f" ]; then
+      set_perm 0755 $f
+    else
+      set_perm 0644 $f
+    fi
+    set_owner system system $f
+    set_con system_file $f
+  done
 done
 ui_print "Copying files"
 $UTILS cp --preserve=a -r ./* /system/
