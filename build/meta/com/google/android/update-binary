@@ -44,9 +44,8 @@ fi
 
 ui_print "Extracting files"
 cd /tmp
-mkdir system
+unzip -o "$ZIP" system/*
 cd system
-unzip -o "$ZIP"
 DIRS="addon.d app priv-app framework etc lib"
 if [ -d /system/lib64 ]; then
   DIRS="$DIRS lib64"
