@@ -18,3 +18,21 @@ _make gapps_arm64_
 
 _make gapps_x86_
 - compile signed flashable GApps for x86 (NOT supported atm)
+
+Thanks and Credits
+-------------------
+
+gmrt
+- Mounting of /system script and initial list for gapps
+
+harryyoud, flex1911, raymanfx, deadman96385, jrior001, haggertk, arco
+- Throrough testing
+
+jrizzoli
+- Initial build scripts and build system
+
+luca020400
+- Fixing my makefiles
+
+syphyr
+- Showing me how to repack libs in PrebuiltGmsCore
