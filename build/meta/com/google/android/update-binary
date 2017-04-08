@@ -2,17 +2,21 @@
 
 ZIP=$3
 
+exec_util() {
+  LD_LIBRARY_PATH=$LD_PATH $UTILS $1
+}
+
 set_con() {
-  $UTILS chcon -h u:object_r:"$1":s0 $2
-  $UTILS chcon u:object_r:"$1":s0 $2
+  exec_util "chcon -h u:object_r:"$1":s0 $2"
+  exec_util "chcon u:object_r:"$1":s0 $2"
 }
 
 set_perm() {
-  $UTILS chmod $1 $2
+  exec_util "chmod $1 $2"
 }
 
 set_owner() {
-  $UTILS chown $1:$2 $3
+  exec_util "chown $1:$2 $3"
 }
 
 ui_print "*****************"
@@ -36,27 +40,30 @@ fi
 
 if [ -f /system/bin/toybox ]; then
   UTILS=/system/bin/toybox
+  LD_PATH=/system/lib
 else
   ui_print "Could not find /system/bin/toybox! Aborting..."
   exit 1
 fi
 
+DIRS="addon.d app priv-app framework etc lib"
+
+if [ -d /system/lib64 ]; then
+  DIRS="$DIRS lib64"
+  LD_PATH=/system/lib64
+fi
 
 ui_print "Extracting files"
 cd /tmp
 unzip -o "$ZIP" system/*
 cd system
-DIRS="addon.d app priv-app framework etc lib"
-if [ -d /system/lib64 ]; then
-  DIRS="$DIRS lib64"
-fi
 for dirs in $DIRS; do
   set_perm 0755 $dir
-  for d in `$UTILS find ./$dir -type d`; do
+  for d in `exec_util "find ./$dir -type d"`; do
     set_perm 0755 $d
     set_owner system system $d
   done
-  for f in `$UTILS find ./$dir -type f`; do
+  for f in `exec_util "find ./$dir -type f"`; do
     type=$(echo "$f" | sed 's/.*\.//')
     if [ "$type" == "sh" ] || [ "$type" == "$f" ]; then
       set_perm 0755 $f
@@ -68,10 +75,10 @@ for dirs in $DIRS; do
   done
 done
 ui_print "Copying files"
-$UTILS cp --preserve=a -r ./* /system/
+exec_util "cp --preserve=a -r ./* /system/"
 ui_print "Cleaning up files"
 cd ../
-$UTILS rm -rf system/
+exec_util "rm -rf system/"
 
 ui_print "Unmounting /system"
 umount /system
