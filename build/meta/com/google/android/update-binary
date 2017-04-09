@@ -67,7 +67,7 @@ for dirs in $DIRS; do
   set_perm 0755 $dir
   for d in `exec_util "find ./$dir -type d"`; do
     set_perm 0755 $d
-    set_owner system system $d
+    set_owner root root $d
   done
   for f in `exec_util "find ./$dir -type f"`; do
     type=$(echo "$f" | sed 's/.*\.//')
@@ -76,7 +76,7 @@ for dirs in $DIRS; do
     else
       set_perm 0644 $f
     fi
-    set_owner system system $f
+    set_owner root root $f
     set_con system_file $f
   done
 done
