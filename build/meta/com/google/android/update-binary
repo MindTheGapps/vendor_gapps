@@ -32,7 +32,7 @@ ui_print "**********************"
 ui_print "Mounting /system"
 
 if mount /system; then
-   ui_print "/system mounted"
+  ui_print "/system mounted"
 else
   # Try to get the block from /etc/recovery.fstab
   block=`cat /etc/recovery.fstab | cut -d '#' -f 1 | grep /system | grep -o '/dev/[^ ]*' | head -1`
