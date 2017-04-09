@@ -34,5 +34,8 @@ jrizzoli
 luca020400
 - Fixing my makefiles
 
+mikeioannina
+- The name for MindTheGapps
+
 syphyr
 - Showing me how to repack libs in PrebuiltGmsCore
