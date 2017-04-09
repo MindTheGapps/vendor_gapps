@@ -21,7 +21,7 @@ ifneq ($(filter arm arm64 x86,$(TARGET_ARCH)),)
 include $(CLEAR_VARS)
 LOCAL_MODULE := GoogleContactsSyncAdapter
 LOCAL_MODULE_OWNER := gapps
-LOCAL_SRC_FILES := proprietary/GoogleContactsSyncAdapter/GoogleContactsSyncAdapter.apk
+LOCAL_SRC_FILES := proprietary/app/GoogleContactsSyncAdapter/GoogleContactsSyncAdapter.apk
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -32,7 +32,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := GoogleExtShared
 LOCAL_MODULE_OWNER := gapps
-LOCAL_SRC_FILES := proprietary/GoogleExtShared/GoogleExtShared.apk
+LOCAL_SRC_FILES := proprietary/app/GoogleExtShared/GoogleExtShared.apk
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -43,7 +43,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := GoogleBackupTransport
 LOCAL_MODULE_OWNER := gapps
-LOCAL_SRC_FILES := proprietary/GoogleBackupTransport/GoogleBackupTransport.apk
+LOCAL_SRC_FILES := proprietary/priv-app/GoogleBackupTransport/GoogleBackupTransport.apk
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -55,7 +55,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := GoogleExtServices
 LOCAL_MODULE_OWNER := gapps
-LOCAL_SRC_FILES := proprietary/GoogleExtServices/GoogleExtServices.apk
+LOCAL_SRC_FILES := proprietary/priv-app/GoogleExtServices/GoogleExtServices.apk
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -67,7 +67,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := GoogleFeedback
 LOCAL_MODULE_OWNER := gapps
-LOCAL_SRC_FILES := proprietary/GoogleFeedback/GoogleFeedback.apk
+LOCAL_SRC_FILES := proprietary/priv-app/GoogleFeedback/GoogleFeedback.apk
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -79,7 +79,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := GoogleLoginService
 LOCAL_MODULE_OWNER := gapps
-LOCAL_SRC_FILES := proprietary/GoogleLoginService/GoogleLoginService.apk
+LOCAL_SRC_FILES := proprietary/priv-app/GoogleLoginService/GoogleLoginService.apk
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -91,7 +91,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := GoogleOneTimeInitializer
 LOCAL_MODULE_OWNER := gapps
-LOCAL_SRC_FILES := proprietary/GoogleOneTimeInitializer/GoogleOneTimeInitializer.apk
+LOCAL_SRC_FILES := proprietary/priv-app/GoogleOneTimeInitializer/GoogleOneTimeInitializer.apk
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -103,7 +103,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := GooglePartnerSetup
 LOCAL_MODULE_OWNER := gapps
-LOCAL_SRC_FILES := proprietary/GooglePartnerSetup/GooglePartnerSetup.apk
+LOCAL_SRC_FILES := proprietary/priv-app/GooglePartnerSetup/GooglePartnerSetup.apk
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -115,7 +115,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := GoogleServicesFramework
 LOCAL_MODULE_OWNER := gapps
-LOCAL_SRC_FILES := proprietary/GoogleServicesFramework/GoogleServicesFramework.apk
+LOCAL_SRC_FILES := proprietary/priv-app/GoogleServicesFramework/GoogleServicesFramework.apk
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -127,7 +127,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := HotwordEnrollment
 LOCAL_MODULE_OWNER := gapps
-LOCAL_SRC_FILES := proprietary/HotwordEnrollment/HotwordEnrollment.apk
+LOCAL_SRC_FILES := proprietary/priv-app/HotwordEnrollment/HotwordEnrollment.apk
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -139,7 +139,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := Phonesky
 LOCAL_MODULE_OWNER := gapps
-LOCAL_SRC_FILES := proprietary/Phonesky/Phonesky.apk
+LOCAL_SRC_FILES := proprietary/priv-app/Phonesky/Phonesky.apk
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -151,7 +151,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := SetupWizard
 LOCAL_MODULE_OWNER := gapps
-LOCAL_SRC_FILES := proprietary/SetupWizard/SetupWizard.apk
+LOCAL_SRC_FILES := proprietary/priv-app/SetupWizard/SetupWizard.apk
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
