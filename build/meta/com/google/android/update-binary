@@ -44,19 +44,26 @@ else
   fi
 fi
 
-if [ -f /system/bin/toybox ]; then
-  UTILS=/system/bin/toybox
-  LD_PATH=/system/lib
+if [ -f /system/system/build.prop ]; then
+  ui_print "Detected system-as-root, installing to /system/system"
+  SYSROOT="/system/system"
 else
-  ui_print "Could not find /system/bin/toybox! Aborting..."
+  SYSROOT="/system"
+fi
+
+if [ -f $SYSROOT/bin/toybox ]; then
+  UTILS=$SYSROOT/bin/toybox
+  LD_PATH=$SYSROOT/lib
+else
+  ui_print "Could not find $SYSROOT/bin/toybox! Aborting..."
   exit 1
 fi
 
 DIRS="addon.d app priv-app framework etc lib"
 
-if [ -d /system/lib64 ]; then
+if [ -d $SYSROOT/lib64 ]; then
   DIRS="$DIRS lib64"
-  LD_PATH=/system/lib64
+  LD_PATH=$SYSROOT/lib64
 fi
 
 ui_print "Extracting files"
@@ -81,12 +88,12 @@ for dirs in $DIRS; do
   done
 done
 ui_print "Copying files"
-exec_util "cp --preserve=a -r ./* /system/"
+exec_util "cp --preserve=a -r ./* $SYSROOT/"
 ui_print "Cleaning up files"
 cd ../
 exec_util "rm -rf system/"
 
-ui_print "Unmounting /system"
+ui_print "Unmounting $SYSROOT"
 umount /system
 
 ui_print "Done!"
