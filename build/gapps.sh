@@ -49,23 +49,8 @@ function create() {
     cp -r $COMMON/* $OUT/$GARCH/system >> $GLOG
     echo "Generating addon.d script" >> $GLOG
     test -d $OUT/$GARCH/system/addon.d || mkdir -p $OUT/$GARCH/system/addon.d
-    test -f $ADDOND && rm -f $ADDOND
-    cat $TOP/addond_head > $ADDOND
-    for txt_file in proprietary-files-common proprietary-files-$GARCH; do
-        cat $TOP/$txt_file.txt | while read l; do
-            if [ "$l" != "" ]; then
-                line=$(echo "$l" | sed 's/^-//g')
-                line=${line%%|*}
-                line=${line%%:*}
-                echo "$line" >> $ADDOND.tmp
-            fi
-        done
-    done
-    cat $ADDOND.tmp | LC_ALL=C sort | uniq >> $ADDOND
-    rm $ADDOND.tmp
-    cat $TOP/addond_tail >> $ADDOND
-    chmod 755 $ADDOND
-    mv $ADDOND $OUT/$GARCH/system/addon.d/30-gapps.sh
+    cp -f addond_head $OUT/$GARCH/system/addon.d
+    cp -f addond_tail $OUT/$GARCH/system/addon.d
 }
 
 function zipit() {

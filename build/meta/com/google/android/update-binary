@@ -63,6 +63,14 @@ ui_print "Extracting files"
 cd /tmp
 unzip -o "$ZIP" system/*
 cd system
+ui_print "Generating addon.d file"
+cat addon.d/addond_head > addon.d/30-gapps.sh
+for f in `exec_util "find . -type f"`; do
+  line=$(echo "$f" | sed 's/\.\///')
+  echo "$line" >> addon.d/30-gapps.sh
+done
+cat addon.d/addond_tail >> addon.d/30-gapps.sh
+ui_print "Preparing files for copying"
 for dirs in $DIRS; do
   set_perm 0755 $dir
   for d in `exec_util "find ./$dir -type d"`; do
