@@ -24,6 +24,7 @@ PRODUCT_COPY_FILES += \
     vendor/gapps/common/proprietary/etc/sysconfig/whitelist_com.android.omadm.service.xml:system/etc/sysconfig/whitelist_com.android.omadm.service.xml
 
 PRODUCT_PACKAGES += \
+    GoogleCalendarSyncAdapter \
     GoogleContactsSyncAdapter \
     GoogleExtShared \
     GoogleBackupTransport \

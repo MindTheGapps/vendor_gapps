@@ -1,3 +1,4 @@
+-app/GoogleCalendarSyncAdapter/GoogleCalendarSyncAdapter.apk:app/GoogleCalendarSyncAdapter/GoogleCalendarSyncAdapter.apk:PRESIGNED|aa482580c87a43c83882c05a4757754917d47f32
 -app/GoogleContactsSyncAdapter/GoogleContactsSyncAdapter.apk:app/GoogleContactsSyncAdapter/GoogleContactsSyncAdapter.apk:PRESIGNED
 -app/GoogleExtShared/GoogleExtShared.apk:app/GoogleExtShared/GoogleExtShared.apk:PRESIGNED
 

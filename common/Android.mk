@@ -19,6 +19,17 @@ LOCAL_PATH := $(call my-dir)
 ifneq ($(filter arm arm64 x86,$(TARGET_ARCH)),)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := GoogleCalendarSyncAdapter
+LOCAL_MODULE_OWNER := gapps
+LOCAL_SRC_FILES := proprietary/app/GoogleCalendarSyncAdapter/GoogleCalendarSyncAdapter.apk
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := GoogleContactsSyncAdapter
 LOCAL_MODULE_OWNER := gapps
 LOCAL_SRC_FILES := proprietary/app/GoogleContactsSyncAdapter/GoogleContactsSyncAdapter.apk
