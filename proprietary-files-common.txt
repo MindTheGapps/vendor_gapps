@@ -8,7 +8,6 @@
 -priv-app/GoogleOneTimeInitializer/GoogleOneTimeInitializer.apk:priv-app/GoogleOneTimeInitializer/GoogleOneTimeInitializer.apk:PRESIGNED
 -priv-app/GooglePartnerSetup/GooglePartnerSetup.apk:priv-app/GooglePartnerSetup/GooglePartnerSetup.apk:PRESIGNED
 -priv-app/GoogleServicesFramework/GoogleServicesFramework.apk:priv-app/GoogleServicesFramework/GoogleServicesFramework.apk:PRESIGNED
--priv-app/HotwordEnrollment/HotwordEnrollment.apk:priv-app/HotwordEnrollment/HotwordEnrollment.apk:PRESIGNED
 -priv-app/Phonesky/Phonesky.apk:priv-app/Phonesky/Phonesky.apk:PRESIGNED
 -priv-app/SetupWizard/SetupWizard.apk:priv-app/SetupWizard/SetupWizard.apk:PRESIGNED
 

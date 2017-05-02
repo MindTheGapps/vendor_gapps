@@ -33,7 +33,6 @@ PRODUCT_PACKAGES += \
     GoogleOneTimeInitializer \
     GooglePartnerSetup \
     GoogleServicesFramework \
-    HotwordEnrollment \
     Phonesky \
     SetupWizard \
     com.google.android.maps \
