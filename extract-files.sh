@@ -46,8 +46,8 @@ while [ "$1" != "" ]; do
 done
 
 if [ -z "$SRC" ]; then
-    echo "Warning, path to system dump not specified, pulling from adb"
-    SRC=adb
+    echo "Path to system dump not specified! Specify one with --path"
+    exit 1
 fi
 
 if [ -z "$TARGET" ]; then
