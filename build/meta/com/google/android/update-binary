@@ -37,7 +37,7 @@ else
   # Try to get the block from /etc/recovery.fstab
   block=`cat /etc/recovery.fstab | cut -d '#' -f 1 | grep /system | grep -o '/dev/[^ ]*' | head -1`
   if [ -n "$block" ] && mount $block /system; then
-    ui_print "Could not mount /system! Aborting..."
+    ui_print "Could not mount /system! Aborting"
     exit 1
   else
     ui_print "/system mounted"
@@ -48,7 +48,7 @@ if [ -f /system/bin/toybox ]; then
   UTILS=/system/bin/toybox
   LD_PATH=/system/lib
 else
-  ui_print "Could not find /system/bin/toybox! Aborting..."
+  ui_print "Could not find /system/bin/toybox! Aborting"
   exit 1
 fi
 
