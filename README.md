@@ -22,8 +22,11 @@ _make gapps_x86_
 Thanks and Credits
 -------------------
 
+cdesai
+- Reminding me that /proc/meminfo is a thing
+
 gmrt
-- Mounting of /system script and initial list for gapps
+- Initial list for gapps
 
 harryyoud, flex1911, raymanfx, deadman96385, jrior001, haggertk, arco
 - Throrough testing
