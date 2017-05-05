@@ -72,4 +72,4 @@ printf '\n%s\n' "\$(call inherit-product, vendor/gapps/common/common-vendor.mk)"
 # We are done with target
 write_footers
 
-for f in `find "$MY_DIR" -type f -name Android.mk`; do sed -i s/TARGET_DEVICE/TARGET_ARCH/g $f; done
+find "$MY_DIR" -type f -name Android.mk -exec sed -i 's/TARGET_DEVICE/TARGET_ARCH/g' {} \;
