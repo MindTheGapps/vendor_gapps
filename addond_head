@@ -6,4 +6,3 @@
 
 list_files() {
 cat <<EOF
-addon.d/30-gapps.sh
