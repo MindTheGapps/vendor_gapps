@@ -58,7 +58,8 @@ MEM=`cat /proc/meminfo | head -1 | sed 's/[^0-9]*//g'`
 
 ui_print "Extracting files"
 cd /tmp
-unzip -o "$ZIP" system/*
+unzip -o "$ZIP"
+exec_util "rm -rf META-INF"
 cd system
 if [ "$MEM" -lt "$LOWMEM" ]; then
   ui_print "Low RAM device detected, removing Google SuW"
