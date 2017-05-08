@@ -28,7 +28,10 @@ cdesai
 gmrt
 - Initial list for gapps
 
-harryyoud, flex1911, raymanfx, deadman96385, jrior001, haggertk, arco
+harryyoud
+- Thorough tesing and Jenkins setup
+
+flex1911, raymanfx, deadman96385, jrior001, haggertk, arco
 - Throrough testing
 
 jrizzoli
