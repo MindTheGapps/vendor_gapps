@@ -5,5 +5,5 @@ For files in [arm/arm64/common/x86]/proprietary:
     Contacts their authors for information about licensing.
 
 For any other file:
-    GNU License v2
+    GNU License v2, unless otherwise noted
     (https://www.gnu.org/licenses/gpl-2.0.html for more information)
