@@ -51,8 +51,8 @@ if [ -z "$SRC" ]; then
 fi
 
 if [ -z "$TARGET" ]; then
-    echo "Warning, target for extraction not specified, defaulting to arm"
-    TARGET=arm
+    echo "Architecture for extraction not specified! Specify one with --target"
+    exit 1
 fi
 
 # Initialize the helper for common gapps
