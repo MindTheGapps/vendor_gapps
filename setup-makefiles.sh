@@ -42,7 +42,6 @@ while [ "$1" != "" ]; do
     shift
 done
 
-
 if [ -z "$TARGET" ]; then
     echo "Architecture for makefile setup not specified! Specify one with --target"
     exit 1
