@@ -29,28 +29,38 @@ ui_print "**********************"
 ui_print "MindTheGapps installer"
 ui_print "**********************"
 
-ui_print "Mounting /system"
+ABDEVICE=`getprop ro.build.system_root_image`
 
-if mount /system; then
-  ui_print "/system mounted"
-else
-  ui_print "Could not mount /system! Aborting"
+ui_print "Mounting system partition"
+
+if [ "$ABDEVICE" == "true" ]; then
+  SYSTEM="/system/system"
+  # TODO: Actually handle A/B ota devices
+  ui_print "A/B OTA device detected! This is unsupported. Aborting"
   exit 1
+else
+  SYSTEM="/system"
+  if mount $SYSTEM; then
+    ui_print "$SYSTEM mounted"
+  else
+    ui_print "Could not mount $SYSTEM! Aborting"
+  exit 1
+  fi
 fi
 
-if [ -f /system/bin/toybox ]; then
-  UTILS=/system/bin/toybox
-  LD_PATH=/system/lib
+if [ -f $SYSTEM/bin/toybox ]; then
+  UTILS=$SYSTEM/bin/toybox
+  LD_PATH=$SYSTEM/lib
 else
-  ui_print "Could not find /system/bin/toybox! Aborting"
+  ui_print "Could not find $SYSTEM/bin/toybox! Aborting"
   exit 1
 fi
 
 DIRS="addon.d app priv-app framework etc lib"
 
-if [ -d /system/lib64 ]; then
+if [ -d $SYSTEM/lib64 ]; then
   DIRS="$DIRS lib64"
-  LD_PATH=/system/lib64
+  LD_PATH=$SYSTEM/lib64
 fi
 
 LOWMEM=1572864
@@ -91,13 +101,13 @@ for dirs in $DIRS; do
   done
 done
 ui_print "Copying files"
-exec_util "cp --preserve=a -r ./* /system/"
+exec_util "cp --preserve=a -r ./* $SYSTEM/"
 ui_print "Cleaning up files"
 cd ../
 exec_util "rm -rf system/"
 
-ui_print "Unmounting /system"
-umount /system
+ui_print "Unmounting system partition"
+umount $SYSTEM
 
 ui_print "Done!"
 exit 0
