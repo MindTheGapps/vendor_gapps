@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2017-2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,6 +18,8 @@
 
 set -e
 
+export INITIAL_COPYRIGHT_YEAR=2017
+
 export GAPPS_COMMON=common
 export VENDOR=gapps
 
@@ -25,30 +27,17 @@ export VENDOR=gapps
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
-CM_ROOT="$MY_DIR"/../..
+LINEAGE_ROOT="$MY_DIR"/../..
 
-HELPER="$CM_ROOT"/vendor/cm/build/tools/extract_utils.sh
+HELPER="$LINEAGE_ROOT"/vendor/lineage/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
 fi
 . "$HELPER"
 
-while [ "$1" != "" ]; do
-    case $1 in
-        -t | --target )         shift
-                                export TARGET=$1
-    esac
-    shift
-done
-
-if [ -z "$TARGET" ]; then
-    echo "Architecture for makefile setup not specified! Specify one with --target"
-    exit 1
-fi
-
 # Initialize the helper for common gapps
-setup_vendor "$GAPPS_COMMON" "$VENDOR" "$CM_ROOT" true
+setup_vendor "$GAPPS_COMMON" "$VENDOR" "$LINEAGE_ROOT" true
 
 # Copyright headers
 write_headers "arm arm64 x86"
@@ -59,8 +48,10 @@ write_makefiles "$MY_DIR"/proprietary-files-common.txt
 # We are done with common
 write_footers
 
+for TARGET in arm arm64 x86; do
+
 # Reinitialize the helper for target gapps
-setup_vendor "$TARGET" "$VENDOR" "$CM_ROOT" true
+setup_vendor "$TARGET" "$VENDOR" "$LINEAGE_ROOT" true
 
 # Copyright headers and guards
 write_headers "$TARGET"
@@ -69,7 +60,9 @@ write_makefiles "$MY_DIR"/proprietary-files-$TARGET.txt
 
 printf '\n%s\n' "\$(call inherit-product, vendor/gapps/common/common-vendor.mk)" >> "$PRODUCTMK"
 
+sed -i 's/TARGET_DEVICE/TARGET_ARCH/g' "$ANDROIDMK"
+
 # We are done with target
 write_footers
 
-find "$MY_DIR" -type f -name Android.mk -exec sed -i 's/TARGET_DEVICE/TARGET_ARCH/g' {} \;
+done
