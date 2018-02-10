@@ -14,10 +14,8 @@
 -priv-app/SetupWizard/SetupWizard.apk;PRESIGNED
 
 -framework/com.google.android.maps.jar;PRESIGNED
--framework/com.google.widevine.software.drm.jar;PRESIGNED
 
 etc/permissions/com.google.android.maps.xml
-etc/permissions/com.google.widevine.software.drm.xml
 etc/permissions/com.android.omadm.service.xml
 
 etc/sysconfig/google.xml
