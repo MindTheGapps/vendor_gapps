@@ -6,7 +6,6 @@
 -priv-app/GoogleBackupTransport/GoogleBackupTransport.apk;PRESIGNED
 -priv-app/GoogleExtServices/GoogleExtServices.apk;PRESIGNED
 -priv-app/GoogleFeedback/GoogleFeedback.apk;PRESIGNED
--priv-app/GoogleLoginService/GoogleLoginService.apk;PRESIGNED
 -priv-app/GoogleOneTimeInitializer/GoogleOneTimeInitializer.apk;PRESIGNED
 -priv-app/GooglePartnerSetup/GooglePartnerSetup.apk;PRESIGNED
 -priv-app/GoogleServicesFramework/GoogleServicesFramework.apk;PRESIGNED
