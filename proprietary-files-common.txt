@@ -15,8 +15,6 @@
 -framework/com.google.android.maps.jar;PRESIGNED
 
 etc/permissions/com.google.android.maps.xml
-etc/permissions/com.android.omadm.service.xml
 
 etc/sysconfig/google.xml
 etc/sysconfig/google_build.xml
-etc/sysconfig/whitelist_com.android.omadm.service.xml
