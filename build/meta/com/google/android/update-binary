@@ -71,10 +71,10 @@ cd /tmp
 unzip -o "$ZIP"
 exec_util "rm -rf META-INF"
 cd system
-if [ "$MEM" -lt "$LOWMEM" ]; then
-  ui_print "Low RAM device detected, removing Google SuW"
+#if [ "$MEM" -lt "$LOWMEM" ]; then
+#  ui_print "Low RAM device detected, removing Google SuW"
   exec_util "rm -rf priv-app/SetupWizard"
-fi
+#fi
 ui_print "Generating addon.d file"
 cat addon.d/addond_head > addon.d/30-gapps.sh
 for f in `exec_util "find . -type f"`; do
