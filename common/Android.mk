@@ -16,7 +16,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter arm arm64 x86,$(TARGET_DEVICE)),)
+ifneq ($(filter arm arm64 x86,$(TARGET_ARCH)),)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := GoogleCalendarSyncAdapter

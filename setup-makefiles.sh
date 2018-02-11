@@ -45,6 +45,8 @@ write_headers "arm arm64 x86"
 # Common gapps
 write_makefiles "$MY_DIR"/proprietary-files-common.txt
 
+sed -i 's/TARGET_DEVICE/TARGET_ARCH/g' "$ANDROIDMK"
+
 # We are done with common
 write_footers
 
