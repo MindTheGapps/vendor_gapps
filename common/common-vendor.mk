@@ -31,5 +31,4 @@ PRODUCT_PACKAGES += \
     GooglePartnerSetup \
     GoogleServicesFramework \
     Phonesky \
-    SetupWizard \
     com.google.android.maps
