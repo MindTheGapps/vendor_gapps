@@ -25,14 +25,17 @@ Thanks and Credits
 cdesai
 - Reminding me that /proc/meminfo is a thing
 
+ciwrl
+- Catching a few spelling errors in this file
+
 gmrt
 - Initial list for gapps
 
 harryyoud
-- Thorough tesing and Jenkins setup
+- Thorough testing and Jenkins setup
 
 flex1911, raymanfx, deadman96385, jrior001, haggertk, arco
-- Throrough testing
+- Thorough testing
 
 jrizzoli
 - Initial build scripts and build system
