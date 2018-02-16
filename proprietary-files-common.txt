@@ -10,8 +10,7 @@
 -priv-app/GooglePartnerSetup/GooglePartnerSetup.apk;PRESIGNED
 -priv-app/GoogleServicesFramework/GoogleServicesFramework.apk;PRESIGNED
 -priv-app/Phonesky/Phonesky.apk;PRESIGNED
-# Temp disabled as all 8.1 versions crash
-#-priv-app/SetupWizard/SetupWizard.apk;PRESIGNED
+-priv-app/SetupWizard/SetupWizard.apk;PRESIGNED
 
 -framework/com.google.android.maps.jar;PRESIGNED
 
