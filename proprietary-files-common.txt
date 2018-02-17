@@ -2,7 +2,6 @@
 -app/GoogleContactsSyncAdapter/GoogleContactsSyncAdapter.apk;PRESIGNED
 -app/GoogleExtShared/GoogleExtShared.apk;PRESIGNED
 
--priv-app/ConfigUpdater/ConfigUpdater.apk;PRESIGNED
 -priv-app/GoogleBackupTransport/GoogleBackupTransport.apk;PRESIGNED
 -priv-app/GoogleExtServices/GoogleExtServices.apk;PRESIGNED
 -priv-app/GoogleFeedback/GoogleFeedback.apk;PRESIGNED
