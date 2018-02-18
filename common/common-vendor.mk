@@ -31,4 +31,5 @@ PRODUCT_PACKAGES += \
     GoogleServicesFramework \
     Phonesky \
     SetupWizard \
+    Velvet \
     com.google.android.maps
