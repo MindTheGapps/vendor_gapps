@@ -45,5 +45,6 @@ fi
 setup_vendor "$GAPPS_COMMON" "$VENDOR" "$LINEAGE_ROOT"
 
 extract "$MY_DIR"/proprietary-files-common.txt "$SRC"
+extract "$MY_DIR"/proprietary-files-common-nongrouper.txt "$SRC"
 
 "$MY_DIR"/setup-makefiles.sh

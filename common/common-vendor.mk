@@ -30,6 +30,10 @@ PRODUCT_PACKAGES += \
     GooglePartnerSetup \
     GoogleServicesFramework \
     Phonesky \
-    SetupWizard \
-    Velvet \
     com.google.android.maps
+ifeq ($(TARGET_IS_GROUPER),)
+
+PRODUCT_PACKAGES += \
+    SetupWizard \
+    Velvet
+endif

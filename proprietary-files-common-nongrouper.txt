@@ -1,0 +1,2 @@
+-priv-app/SetupWizard/SetupWizard.apk;PRESIGNED
+-priv-app/Velvet/Velvet.apk;PRESIGNED

@@ -72,8 +72,9 @@ unzip -o "$ZIP"
 exec_util "rm -rf META-INF"
 cd system
 if [ "$MEM" -lt "$LOWMEM" ]; then
-  ui_print "Low RAM device detected, removing Google SuW"
+  ui_print "Low RAM device detected, removing large extras"
   exec_util "rm -rf priv-app/SetupWizard"
+  exec_util "rm -rf priv-app/Velvet"
 fi
 ui_print "Generating addon.d file"
 cat addon.d/addond_head > addon.d/30-gapps.sh
