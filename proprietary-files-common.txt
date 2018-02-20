@@ -13,6 +13,7 @@
 -framework/com.google.android.maps.jar;PRESIGNED
 
 etc/permissions/com.google.android.maps.xml
+etc/permissions/privapp-permissions-google.xml
 
 etc/sysconfig/google.xml
 etc/sysconfig/google_build.xml
