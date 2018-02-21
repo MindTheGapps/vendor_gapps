@@ -11,8 +11,10 @@
 -priv-app/Phonesky/Phonesky.apk;PRESIGNED
 
 -framework/com.google.android.maps.jar;PRESIGNED
+-framework/com.google.android.dialer.support.jar;PRESIGNED
 
 etc/permissions/com.google.android.maps.xml
+etc/permissions/com.google.android.dialer.support.xml
 etc/permissions/privapp-permissions-google.xml
 
 etc/sysconfig/google.xml

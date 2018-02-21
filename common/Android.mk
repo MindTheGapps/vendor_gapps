@@ -136,6 +136,16 @@ LOCAL_PRIVILEGED_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := com.google.android.dialer.support
+LOCAL_MODULE_OWNER := gapps
+LOCAL_SRC_FILES := proprietary/framework/com.google.android.dialer.support.jar
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE_SUFFIX := .jar
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := com.google.android.maps
 LOCAL_MODULE_OWNER := gapps
 LOCAL_SRC_FILES := proprietary/framework/com.google.android.maps.jar
