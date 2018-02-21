@@ -71,6 +71,7 @@ cd /tmp
 unzip -o "$ZIP"
 exec_util "rm -rf META-INF"
 cd system
+
 if [ "$MEM" -lt "$LOWMEM" ]; then
   ui_print "Low RAM device detected, removing large extras"
   exec_util "rm -rf priv-app/SetupWizard"
@@ -103,6 +104,7 @@ for dirs in $DIRS; do
 done
 ui_print "Copying files"
 exec_util "cp --preserve=a -r ./* $SYSTEM/"
+exec_util "rm -rf $SYSTEM/priv-app/Provision/"
 ui_print "Cleaning up files"
 cd ../
 exec_util "rm -rf system/"

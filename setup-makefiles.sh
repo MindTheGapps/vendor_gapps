@@ -54,6 +54,9 @@ echo "endif" >> "$ANDROIDMK"
 
 sed -i 's/TARGET_DEVICE/TARGET_ARCH/g' "$ANDROIDMK"
 
+# Make Google SuW override Provision
+sed -i 's/\(SetupWizard.apk\)/\1\nLOCAL_OVERRIDES_PACKAGES := Provision/' "$ANDROIDMK"
+
 # We are done with common
 write_footers
 
