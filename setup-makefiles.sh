@@ -45,13 +45,6 @@ write_headers "arm arm64 x86"
 # Common gapps
 write_makefiles "$MY_DIR"/proprietary-files-common.txt
 
-# Gapps that are too large for grouper
-echo "ifeq (\$(TARGET_IS_GROUPER),)" >> "$PRODUCTMK"
-echo "ifeq (\$(TARGET_IS_GROUPER),)" >> "$ANDROIDMK"
-write_makefiles "$MY_DIR"/proprietary-files-common-nongrouper.txt
-echo "endif" >> "$PRODUCTMK"
-echo "endif" >> "$ANDROIDMK"
-
 sed -i 's/TARGET_DEVICE/TARGET_ARCH/g' "$ANDROIDMK"
 
 # Make Google SuW override Provision
