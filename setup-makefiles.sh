@@ -47,8 +47,8 @@ write_makefiles "$MY_DIR"/proprietary-files-common.txt
 
 sed -i 's/TARGET_DEVICE/TARGET_ARCH/g' "$ANDROIDMK"
 
-# Make Google SuW override Provision
-sed -i 's/\(SetupWizard.apk\)/\1\nLOCAL_OVERRIDES_PACKAGES := Provision/' "$ANDROIDMK"
+# Make LeanbackLauncherO override LeanbackLauncher
+sed -i 's/\(LeanbackLauncherO.apk\)/\1\nLOCAL_OVERRIDES_PACKAGES := LeanbackLauncher/' "$ANDROIDMK"
 
 # We are done with common
 write_footers

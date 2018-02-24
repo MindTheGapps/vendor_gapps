@@ -95,6 +95,7 @@ for dirs in $DIRS; do
 done
 ui_print "Copying files"
 exec_util "cp --preserve=a -r ./* $SYSTEM/"
+exec_util "rm -rf $SYSTEM/priv-app/LeanbackLauncher/"
 exec_util "rm -rf $SYSTEM/priv-app/Provision/"
 ui_print "Cleaning up files"
 cd ../
