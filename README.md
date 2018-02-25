@@ -46,5 +46,8 @@ luca020400
 mikeioannina
 - The name for MindTheGapps
 
+npjohnson, webgeek1234
+- Testing atv
+
 syphyr
 - Showing me how to repack libs in PrebuiltGmsCore
