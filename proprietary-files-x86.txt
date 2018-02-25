@@ -1,1 +1,1 @@
--priv-app/PrebuiltGmsCorePano/PrebuiltGmsCorePano.apk;PRESIGNED|b07ce8ccaa2750a195893cdf9811598934945adf
+-priv-app/PrebuiltGmsCorePano/PrebuiltGmsCorePano.apk;PRESIGNED|2820529d41e984828e5cc6ca968908a915df5c0b
