@@ -51,7 +51,7 @@ sed -i 's/TARGET_DEVICE/TARGET_ARCH/g' "$ANDROIDMK"
 sed -i 's/\(LOCAL_MODULE := \)LeanbackLauncher/\1LeanbackLauncherO/g' "$ANDROIDMK"
 
 # Make LeanbackLauncherO override LeanbackLauncher
-sed -i 's/\(LeanbackLauncherO.apk\)/\1\nLOCAL_OVERRIDES_PACKAGES := LeanbackLauncher/' "$ANDROIDMK"
+sed -i 's/\(LeanbackLauncher.apk\)/\1\nLOCAL_OVERRIDES_PACKAGES := LeanbackLauncher/' "$ANDROIDMK"
 
 # We are done with common
 write_footers
