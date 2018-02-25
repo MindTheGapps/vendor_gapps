@@ -47,6 +47,9 @@ write_makefiles "$MY_DIR"/proprietary-files-common.txt
 
 sed -i 's/TARGET_DEVICE/TARGET_ARCH/g' "$ANDROIDMK"
 
+# extract_utils struggles with extracting to a different dest
+sed -i 's/\(LOCAL_MODULE := \)LeanbackLauncher/\1LeanbackLauncherO/g' "$ANDROIDMK"
+
 # Make LeanbackLauncherO override LeanbackLauncher
 sed -i 's/\(LeanbackLauncherO.apk\)/\1\nLOCAL_OVERRIDES_PACKAGES := LeanbackLauncher/' "$ANDROIDMK"
 
