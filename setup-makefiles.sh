@@ -49,6 +49,7 @@ sed -i 's/TARGET_DEVICE/TARGET_ARCH/g' "$ANDROIDMK"
 
 # extract_utils struggles with extracting to a different dest
 sed -i 's/\(LOCAL_MODULE := \)LeanbackLauncher/\1LeanbackLauncherO/g' "$ANDROIDMK"
+sed -i 's/\(LeanbackLauncher\) \\/\1O \\/g' "$PRODUCTMK"
 
 # Make LeanbackLauncherO override LeanbackLauncher
 sed -i 's/\(LeanbackLauncher.apk\)/\1\nLOCAL_OVERRIDES_PACKAGES := LeanbackLauncher/' "$ANDROIDMK"

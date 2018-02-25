@@ -35,7 +35,7 @@ PRODUCT_PACKAGES += \
     GoogleExtServices \
     GoogleServicesFramework \
     Katniss \
-    LeanbackLauncher \
+    LeanbackLauncherO \
     TV \
     TVLauncher \
     TVRecommendations \
