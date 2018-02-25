@@ -19,6 +19,28 @@ LOCAL_PATH := $(call my-dir)
 ifneq ($(filter arm arm64 x86,$(TARGET_ARCH)),)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := AtvWidget
+LOCAL_MODULE_OWNER := gapps
+LOCAL_SRC_FILES := proprietary/app/AtvWidget/AtvWidget.apk
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := Backdrop
+LOCAL_MODULE_OWNER := gapps
+LOCAL_SRC_FILES := proprietary/app/Backdrop/Backdrop.apk
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := GoogleCalendarSyncAdapter
 LOCAL_MODULE_OWNER := gapps
 LOCAL_SRC_FILES := proprietary/app/GoogleCalendarSyncAdapter/GoogleCalendarSyncAdapter.apk
@@ -49,6 +71,51 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
 LOCAL_DEX_PREOPT := false
 LOCAL_MODULE_SUFFIX := .apk
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := NoTouchAuthDelegate
+LOCAL_MODULE_OWNER := gapps
+LOCAL_SRC_FILES := proprietary/app/NoTouchAuthDelegate/NoTouchAuthDelegate.apk
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := SecondScreenSetup
+LOCAL_MODULE_OWNER := gapps
+LOCAL_SRC_FILES := proprietary/app/SecondScreenSetup/SecondScreenSetup.apk
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := SecondScreenSetupAuthBridge
+LOCAL_MODULE_OWNER := gapps
+LOCAL_SRC_FILES := proprietary/app/SecondScreenSetupAuthBridge/SecondScreenSetupAuthBridge.apk
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := AndroidMediaShell
+LOCAL_MODULE_OWNER := gapps
+LOCAL_SRC_FILES := proprietary/priv-app/AndroidMediaShell/AndroidMediaShell.apk
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+LOCAL_PRIVILEGED_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -124,9 +191,9 @@ LOCAL_PRIVILEGED_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := Phonesky
+LOCAL_MODULE := Katniss
 LOCAL_MODULE_OWNER := gapps
-LOCAL_SRC_FILES := proprietary/priv-app/Phonesky/Phonesky.apk
+LOCAL_SRC_FILES := proprietary/priv-app/Katniss/Katniss.apk
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -136,13 +203,64 @@ LOCAL_PRIVILEGED_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := com.google.android.dialer.support
+LOCAL_MODULE := LeanbackLauncherO
 LOCAL_MODULE_OWNER := gapps
-LOCAL_SRC_FILES := proprietary/framework/com.google.android.dialer.support.jar
+LOCAL_SRC_FILES := proprietary/priv-app/LeanbackLauncherO/LeanbackLauncherO.apk
+LOCAL_OVERRIDES_PACKAGES := LeanbackLauncher
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := JAVA_LIBRARIES
-LOCAL_MODULE_SUFFIX := .jar
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+LOCAL_PRIVILEGED_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := TV
+LOCAL_MODULE_OWNER := gapps
+LOCAL_SRC_FILES := proprietary/priv-app/TV/TV.apk
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+LOCAL_PRIVILEGED_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := TVLauncher
+LOCAL_MODULE_OWNER := gapps
+LOCAL_SRC_FILES := proprietary/priv-app/TVLauncher/TVLauncher.apk
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+LOCAL_PRIVILEGED_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := TVRecommendations
+LOCAL_MODULE_OWNER := gapps
+LOCAL_SRC_FILES := proprietary/priv-app/TVRecommendations/TVRecommendations.apk
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+LOCAL_PRIVILEGED_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := Tubesky
+LOCAL_MODULE_OWNER := gapps
+LOCAL_SRC_FILES := proprietary/priv-app/Tubesky/Tubesky.apk
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+LOCAL_PRIVILEGED_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -155,31 +273,14 @@ LOCAL_MODULE_CLASS := JAVA_LIBRARIES
 LOCAL_MODULE_SUFFIX := .jar
 include $(BUILD_PREBUILT)
 
-ifeq ($(TARGET_IS_GROUPER),)
 include $(CLEAR_VARS)
-LOCAL_MODULE := SetupWizard
+LOCAL_MODULE := com.google.android.pano.v1
 LOCAL_MODULE_OWNER := gapps
-LOCAL_SRC_FILES := proprietary/priv-app/SetupWizard/SetupWizard.apk
-LOCAL_OVERRIDES_PACKAGES := Provision
+LOCAL_SRC_FILES := proprietary/framework/com.google.android.pano.v1.jar
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_DEX_PREOPT := false
-LOCAL_MODULE_SUFFIX := .apk
-LOCAL_PRIVILEGED_MODULE := true
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE_SUFFIX := .jar
 include $(BUILD_PREBUILT)
 
-include $(CLEAR_VARS)
-LOCAL_MODULE := Velvet
-LOCAL_MODULE_OWNER := gapps
-LOCAL_SRC_FILES := proprietary/priv-app/Velvet/Velvet.apk
-LOCAL_CERTIFICATE := PRESIGNED
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_DEX_PREOPT := false
-LOCAL_MODULE_SUFFIX := .apk
-LOCAL_PRIVILEGED_MODULE := true
-include $(BUILD_PREBUILT)
-
-endif
 endif
