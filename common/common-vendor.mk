@@ -31,11 +31,13 @@ PRODUCT_PACKAGES += \
     SecondScreenSetup \
     SecondScreenSetupAuthBridge \
     AndroidMediaShell \
+    AtvRemoteService \
     GoogleBackupTransport \
     GoogleExtServices \
     GoogleServicesFramework \
     Katniss \
     LeanbackLauncherO \
+    RemoteControlService \
     TV \
     TVLauncher \
     TVRecommendations \
