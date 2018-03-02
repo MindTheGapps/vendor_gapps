@@ -70,6 +70,13 @@ write_headers "$TARGET"
 
 write_makefiles "$MY_DIR"/proprietary-files-$TARGET.txt
 
+# Gapps that are too large for grouper
+echo "ifeq (\$(TARGET_IS_GROUPER),)" >> "$PRODUCTMK"
+echo "ifeq (\$(TARGET_IS_GROUPER),)" >> "$ANDROIDMK"
+write_makefiles "$MY_DIR"/proprietary-files-$TARGET-nongrouper.txt
+echo "endif" >> "$PRODUCTMK"
+echo "endif" >> "$ANDROIDMK"
+
 printf '\n%s\n' "\$(call inherit-product, vendor/gapps/common/common-vendor.mk)" >> "$PRODUCTMK"
 
 sed -i 's/TARGET_DEVICE/TARGET_ARCH/g' "$ANDROIDMK"

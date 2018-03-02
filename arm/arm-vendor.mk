@@ -19,5 +19,10 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     PrebuiltGmsCore
+ifeq ($(TARGET_IS_GROUPER),)
+
+PRODUCT_PACKAGES += \
+    Velvet
+endif
 
 $(call inherit-product, vendor/gapps/common/common-vendor.mk)
