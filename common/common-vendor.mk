@@ -25,6 +25,7 @@ PRODUCT_PACKAGES += \
     GoogleCalendarSyncAdapter \
     GoogleContactsSyncAdapter \
     GoogleExtShared \
+    PrebuiltExchange3Google \
     GoogleBackupTransport \
     GoogleExtServices \
     GoogleFeedback \
