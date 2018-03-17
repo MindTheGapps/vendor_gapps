@@ -96,6 +96,7 @@ for f in `exec_util "find . -type f"`; do
   echo "$line" >> addon.d/30-gapps.sh
 done
 cat addon.d/addond_tail >> addon.d/30-gapps.sh
+rm addon.d/addond_head addon.d/addond_tail
 ui_print "Preparing files for copying"
 for dirs in $DIRS; do
   set_perm 0755 $dir
