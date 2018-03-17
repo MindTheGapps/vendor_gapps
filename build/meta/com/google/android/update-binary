@@ -122,9 +122,9 @@ cd ../
 exec_util "rm -rf system/"
 
 ui_print "Unmounting system partition"
-if umount /system; then
+if umount -l /system; then
   if [ "$SYSTEMASROOT" == "true" ]; then
-    umount /system_root
+    umount -l /system_root
   fi
 fi
 
