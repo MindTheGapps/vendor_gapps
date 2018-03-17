@@ -29,38 +29,50 @@ ui_print "**********************"
 ui_print "MindTheGapps installer"
 ui_print "**********************"
 
-ABDEVICE=`getprop ro.build.system_root_image`
+SYSTEMASROOT=`getprop ro.build.system_root_image`
 
 ui_print "Mounting system partition"
 
-if [ "$ABDEVICE" == "true" ]; then
-  SYSTEM="/system/system"
-  # TODO: Actually handle A/B ota devices
-  ui_print "A/B OTA device detected! This is unsupported. Aborting"
-  exit 1
-else
-  SYSTEM="/system"
-  if mount $SYSTEM; then
-    ui_print "$SYSTEM mounted"
+if [ "$SYSTEMASROOT" == "true" ]; then
+  CURRENTSLOT=`getprop ro.boot.slot_suffix`
+  if [ ! -z "$CURRENTSLOT" ]; then
+    if [ "$CURRENTSLOT" == "_a" ]; then
+      TARGETSYSTEM=/dev/block/bootdevice/by-name/system_b
+    else
+      TARGETSYSTEM=/dev/block/bootdevice/by-name/system_a
+    fi
   else
-    ui_print "Could not mount $SYSTEM! Aborting"
-  exit 1
+    TARGETSYSTEM=/dev/block/bootdevice/by-name/system
+  fi
+  mkdir -p /system_root
+  if mount -o rw $TARGETSYSTEM /system_root && mount /system_root/system /system; then
+    ui_print "/system mounted"
+  else
+    ui_print "Could not mount /system! Aborting"
+    exit 1
+  fi
+else
+  if mount /system; then
+    ui_print "/system mounted"
+  else
+    ui_print "Could not mount /system! Aborting"
+    exit 1
   fi
 fi
 
-if [ -f $SYSTEM/bin/toybox ]; then
-  UTILS=$SYSTEM/bin/toybox
-  LD_PATH=$SYSTEM/lib
+if [ -f /system/bin/toybox ]; then
+  UTILS=/system/bin/toybox
+  LD_PATH=/system/lib
 else
-  ui_print "Could not find $SYSTEM/bin/toybox! Aborting"
+  ui_print "Could not find /system/bin/toybox! Aborting"
   exit 1
 fi
 
 DIRS="addon.d app priv-app framework etc lib"
 
-if [ -d $SYSTEM/lib64 ]; then
+if [ -d /system/lib64 ]; then
   DIRS="$DIRS lib64"
-  LD_PATH=$SYSTEM/lib64
+  LD_PATH=/system/lib64
 fi
 
 LOWMEM=1572864
@@ -103,14 +115,18 @@ for dirs in $DIRS; do
   done
 done
 ui_print "Copying files"
-exec_util "cp --preserve=a -r ./* $SYSTEM/"
-exec_util "rm -rf $SYSTEM/priv-app/Provision/"
+exec_util "cp --preserve=a -r ./* /system/"
+exec_util "rm -rf /system/priv-app/Provision/"
 ui_print "Cleaning up files"
 cd ../
 exec_util "rm -rf system/"
 
 ui_print "Unmounting system partition"
-umount $SYSTEM
+if umount /system; then
+  if [ "$SYSTEMASROOT" == "true" ]; then
+    umount /system_root
+  fi
+fi
 
 ui_print "Done!"
 exit 0
