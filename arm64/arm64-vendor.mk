@@ -16,6 +16,8 @@
 
 
 PRODUCT_PACKAGES += \
+    AndroidMediaShell \
+    Katniss \
     PrebuiltGmsCorePano
 
 $(call inherit-product, vendor/gapps/common/common-vendor.mk)

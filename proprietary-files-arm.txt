@@ -1,1 +1,3 @@
+-priv-app/AndroidMediaShell/AndroidMediaShell.apk;PRESIGNED|789b7adc3cdefffe691226ce21d0c6912a7e72d0
+-priv-app/Katniss/Katniss.apk;PRESIGNED|2e90d924885cc031f3b79087a39e0fbc57eba92f
 -priv-app/PrebuiltGmsCorePano/PrebuiltGmsCorePano.apk;PRESIGNED|95fe0416ed6f3ab9782ecce97fc57904614f8eb8

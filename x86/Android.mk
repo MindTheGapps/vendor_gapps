@@ -19,6 +19,42 @@ LOCAL_PATH := $(call my-dir)
 ifneq ($(filter x86,$(TARGET_ARCH)),)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := LatinIMEGoogleTvPrebuilt
+LOCAL_MODULE_OWNER := gapps
+LOCAL_SRC_FILES := proprietary/app/LatinIMEGoogleTvPrebuilt/LatinIMEGoogleTvPrebuilt.apk
+LOCAL_OVERRIDES_PACKAGES := LeanbackIme
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := AndroidMediaShell
+LOCAL_MODULE_OWNER := gapps
+LOCAL_SRC_FILES := proprietary/priv-app/AndroidMediaShell/AndroidMediaShell.apk
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+LOCAL_PRIVILEGED_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := Katniss
+LOCAL_MODULE_OWNER := gapps
+LOCAL_SRC_FILES := proprietary/priv-app/Katniss/Katniss.apk
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .apk
+LOCAL_PRIVILEGED_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := PrebuiltGmsCorePano
 LOCAL_MODULE_OWNER := gapps
 LOCAL_SRC_FILES := proprietary/priv-app/PrebuiltGmsCorePano/PrebuiltGmsCorePano.apk

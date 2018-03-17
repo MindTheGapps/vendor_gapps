@@ -1,1 +1,5 @@
+-app/LatinIMEGoogleTvPrebuilt/LatinIMEGoogleTvPrebuilt.apk;PRESIGNED|d307db1ce66a1fb1486f82e78c2089d0512da35b
+
+-priv-app/AndroidMediaShell/AndroidMediaShell.apk;PRESIGNED|23cede70a78f4b18c4c20afd12faa97276d15637
+-priv-app/Katniss/Katniss.apk;PRESIGNED|235aa4df556c4074ea81c520945881d9098080ad
 -priv-app/PrebuiltGmsCorePano/PrebuiltGmsCorePano.apk;PRESIGNED|2820529d41e984828e5cc6ca968908a915df5c0b
