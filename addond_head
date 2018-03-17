@@ -1,5 +1,7 @@
 #!/sbin/sh
 #
+# ADDOND_VERSION=2
+#
 # /system/addon.d/30-gapps.sh
 #
 . /tmp/backuptool.functions
