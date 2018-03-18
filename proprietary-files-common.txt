@@ -14,7 +14,6 @@
 -priv-app/GoogleServicesFramework/GoogleServicesFramework.apk;PRESIGNED
 -priv-app/Katniss/Katniss.apk;PRESIGNED
 -priv-app/LeanbackLauncher/LeanbackLauncher.apk;PRESIGNED
--priv-app/RemoteControlService/RemoteControlService.apk;PRESIGNED
 -priv-app/SetupWraith/SetupWraith.apk;PRESIGNED|fc9b9ccd54596761ae65aedb5769ef541140c612
 -priv-app/Tubesky/Tubesky.apk;PRESIGNED
 -priv-app/TV/TV.apk;PRESIGNED

@@ -169,18 +169,6 @@ LOCAL_PRIVILEGED_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := RemoteControlService
-LOCAL_MODULE_OWNER := gapps
-LOCAL_SRC_FILES := proprietary/priv-app/RemoteControlService/RemoteControlService.apk
-LOCAL_CERTIFICATE := PRESIGNED
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := APPS
-LOCAL_DEX_PREOPT := false
-LOCAL_MODULE_SUFFIX := .apk
-LOCAL_PRIVILEGED_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
 LOCAL_MODULE := SetupWraith
 LOCAL_MODULE_OWNER := gapps
 LOCAL_SRC_FILES := proprietary/priv-app/SetupWraith/SetupWraith.apk

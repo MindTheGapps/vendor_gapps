@@ -37,7 +37,6 @@ PRODUCT_PACKAGES += \
     GoogleServicesFramework \
     Katniss \
     LeanbackLauncherO \
-    RemoteControlService \
     SetupWraith \
     TV \
     TVLauncher \
