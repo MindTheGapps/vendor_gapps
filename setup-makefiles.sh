@@ -67,6 +67,9 @@ write_headers "$TARGET"
 
 write_makefiles "$MY_DIR"/proprietary-files-$TARGET.txt
 
+# Make LatinIMEGoogleTvPrebuilt override LeanbackIme
+sed -i 's/\(LatinIMEGoogleTvPrebuilt.apk\)/\1\nLOCAL_OVERRIDES_PACKAGES := LeanbackIme/' "$ANDROIDMK"
+
 printf '\n%s\n' "\$(call inherit-product, vendor/gapps/common/common-vendor.mk)" >> "$PRODUCTMK"
 
 sed -i 's/TARGET_DEVICE/TARGET_ARCH/g' "$ANDROIDMK"
