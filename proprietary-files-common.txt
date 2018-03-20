@@ -7,12 +7,10 @@
 -app/SecondScreenSetup/SecondScreenSetup.apk;PRESIGNED
 -app/SecondScreenSetupAuthBridge/SecondScreenSetupAuthBridge.apk;PRESIGNED
 
--priv-app/AndroidMediaShell/AndroidMediaShell.apk;PRESIGNED
 -priv-app/AtvRemoteService/AtvRemoteService.apk;PRESIGNED
 -priv-app/GoogleBackupTransport/GoogleBackupTransport.apk;PRESIGNED
 -priv-app/GoogleExtServices/GoogleExtServices.apk;PRESIGNED
 -priv-app/GoogleServicesFramework/GoogleServicesFramework.apk;PRESIGNED
--priv-app/Katniss/Katniss.apk;PRESIGNED
 -priv-app/LeanbackLauncher/LeanbackLauncher.apk;PRESIGNED
 -priv-app/SetupWraith/SetupWraith.apk;PRESIGNED|fc9b9ccd54596761ae65aedb5769ef541140c612
 -priv-app/Tubesky/Tubesky.apk;PRESIGNED

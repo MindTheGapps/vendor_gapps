@@ -30,12 +30,10 @@ PRODUCT_PACKAGES += \
     NoTouchAuthDelegate \
     SecondScreenSetup \
     SecondScreenSetupAuthBridge \
-    AndroidMediaShell \
     AtvRemoteService \
     GoogleBackupTransport \
     GoogleExtServices \
     GoogleServicesFramework \
-    Katniss \
     LeanbackLauncherO \
     SetupWraith \
     TV \
