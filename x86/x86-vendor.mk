@@ -16,8 +16,9 @@
 
 
 PRODUCT_PACKAGES += \
+    LatinIMEGoogleTvPrebuilt \
     AndroidMediaShell \
-    Ketniss \
+    Katniss \
     PrebuiltGmsCorePano
 
 $(call inherit-product, vendor/gapps/common/common-vendor.mk)
