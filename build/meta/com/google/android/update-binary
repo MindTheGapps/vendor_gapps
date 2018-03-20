@@ -95,9 +95,6 @@ for dirs in $DIRS; do
 done
 ui_print "Copying files"
 exec_util "cp --preserve=a -r ./* $SYSTEM/"
-if [ -d $SYSTEM/app/LatinIMEGoogleTvPrebuilt/ ]; then
-    exec_util "rm -rf $SYSTEM/app/LeanbackIme/"
-fi
 exec_util "rm -rf $SYSTEM/priv-app/LeanbackLauncher/"
 exec_util "rm -rf $SYSTEM/priv-app/Provision/"
 ui_print "Cleaning up files"

@@ -22,7 +22,6 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := LatinIMEGoogleTvPrebuilt
 LOCAL_MODULE_OWNER := gapps
 LOCAL_SRC_FILES := proprietary/app/LatinIMEGoogleTvPrebuilt/LatinIMEGoogleTvPrebuilt.apk
-LOCAL_OVERRIDES_PACKAGES := LeanbackIme
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
