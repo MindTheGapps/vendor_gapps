@@ -22,6 +22,7 @@ PRODUCT_COPY_FILES += \
     vendor/gapps/common/proprietary/etc/sysconfig/google_build.xml:system/etc/sysconfig/google_build.xml
 
 PRODUCT_PACKAGES += \
+    AndroidMigratePrebuilt \
     GoogleCalendarSyncAdapter \
     GoogleContactsSyncAdapter \
     GoogleExtShared \

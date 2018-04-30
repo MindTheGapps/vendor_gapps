@@ -3,6 +3,7 @@
 -app/GoogleExtShared/GoogleExtShared.apk;PRESIGNED
 -app/PrebuiltExchange3Google/PrebuiltExchange3Google.apk;PRESIGNED|043cb74798bf137d2dd1a69c7bca0a6702ad88a2
 
+-priv-app/AndroidMigratePrebuilt/AndroidMigratePrebuilt.apk;PRESIGNED
 -priv-app/GoogleBackupTransport/GoogleBackupTransport.apk;PRESIGNED
 -priv-app/GoogleExtServices/GoogleExtServices.apk;PRESIGNED
 -priv-app/GoogleFeedback/GoogleFeedback.apk;PRESIGNED
