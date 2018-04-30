@@ -85,6 +85,7 @@ cd system
 
 if [ "$MEM" -lt "$LOWMEM" ]; then
   ui_print "Low RAM device detected, removing large extras"
+  exec_util "rm -rf priv-app/AndroidMigratePrebuilt"
   exec_util "rm -rf priv-app/SetupWizard"
   exec_util "rm -rf priv-app/Velvet"
 fi
