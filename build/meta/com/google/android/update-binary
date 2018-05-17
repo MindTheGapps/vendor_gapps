@@ -33,6 +33,9 @@ SYSTEMASROOT=`getprop ro.build.system_root_image`
 
 ui_print "Mounting system partition"
 
+# Ensure system is unmounted so mounting succeeds
+umount /system || true
+
 if [ "$SYSTEMASROOT" == "true" ]; then
   CURRENTSLOT=`getprop ro.boot.slot_suffix`
   if [ ! -z "$CURRENTSLOT" ]; then
