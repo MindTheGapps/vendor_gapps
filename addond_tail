@@ -24,9 +24,9 @@ case "$1" in
     # Stub
   ;;
   post-restore)
-   if [ -d "/postinstall" ]; then
+    if [ -d "/postinstall" ]; then
       P="/postinstall/system"
-   else
+    else
       P="/system"
     fi
 
