@@ -39,11 +39,7 @@ umount /system || true
 if [ "$SYSTEMASROOT" == "true" ]; then
   CURRENTSLOT=`getprop ro.boot.slot_suffix`
   if [ ! -z "$CURRENTSLOT" ]; then
-    if [ "$CURRENTSLOT" == "_a" ]; then
-      TARGETSYSTEM=/dev/block/bootdevice/by-name/system_a
-    else
-      TARGETSYSTEM=/dev/block/bootdevice/by-name/system_b
-    fi
+    TARGETSYSTEM=/dev/block/bootdevice/by-name/system"$CURRENTSLOT"
   else
     TARGETSYSTEM=/dev/block/bootdevice/by-name/system
   fi
