@@ -24,6 +24,16 @@ case "$1" in
     # Stub
   ;;
   post-restore)
-    # Stub
+   if [ -d "/postinstall" ]; then
+      P="/postinstall/system"
+   else
+      P="/system"
+    fi
+
+    for i in $(list_files); do
+      chown root:root "$P/$i"
+      chmod 644 "$P/$i"
+      chmod 755 "$(dirname "$P/$i")"
+    done
   ;;
 esac
