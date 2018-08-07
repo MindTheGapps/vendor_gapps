@@ -79,7 +79,9 @@ if [ -d /system/lib64 ]; then
 fi
 
 LOWMEM=1572864
-MEM=`cat /proc/meminfo | head -1 | sed 's/[^0-9]*//g'`
+MEM=`grep MemTotal /proc/meminfo | awk '{ print $2 }'`
+LOW_STORAGE=153600
+STORAGE=`exec_util "df /system" | grep -v Filesystem | awk '{ print $4 }'`
 
 ui_print "Extracting files"
 cd /tmp
@@ -87,8 +89,8 @@ unzip -o "$ZIP"
 exec_util "rm -rf META-INF"
 cd system
 
-if [ "$MEM" -lt "$LOWMEM" ]; then
-  ui_print "Low RAM device detected, removing large extras"
+if [ "$MEM" -lt "$LOWMEM" ] || [ "$STORAGE" -lt "$LOW_STORAGE" ]; then
+  ui_print "Low resource device detected, removing large extras"
   exec_util "rm -rf priv-app/AndroidMigratePrebuilt"
   exec_util "rm -rf priv-app/SetupWizard"
   exec_util "rm -rf priv-app/Velvet"
