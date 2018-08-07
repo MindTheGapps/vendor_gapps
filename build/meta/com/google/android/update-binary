@@ -81,7 +81,13 @@ fi
 LOWMEM=1572864
 MEM=`grep MemTotal /proc/meminfo | awk '{ print $2 }'`
 LOW_STORAGE=153600
+REALLY_LOW_STORAGE=92160
 STORAGE=`exec_util "df /system" | grep -v Filesystem | awk '{ print $4 }'`
+
+if [ "$STORAGE" -lt "$REALLY_LOW_STORAGE" ]; then
+  ui_print "Not enough space for GApps! Aborting"
+  exit 1
+fi
 
 ui_print "Extracting files"
 cd /tmp
