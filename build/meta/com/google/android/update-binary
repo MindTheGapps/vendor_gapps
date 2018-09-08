@@ -129,7 +129,9 @@ for dirs in $DIRS; do
 done
 ui_print "Copying files"
 exec_util "cp --preserve=a -r ./* /system/"
-exec_util "rm -rf /system/priv-app/Provision/"
+if [ -e priv-app/SetupWizard ] ; then
+    exec_util "rm -rf /system/priv-app/Provision/"
+fi
 ui_print "Cleaning up files"
 cd ../
 exec_util "rm -rf system/"
