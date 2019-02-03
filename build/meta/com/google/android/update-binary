@@ -95,7 +95,7 @@ ui_print "Extracting files"
 cd /tmp
 unzip -o "$ZIP"
 exec_util "rm -rf META-INF"
-cd $SYSTEM
+cd system
 
 if [ "$MEM" -lt "$LOWMEM" ] || [ "$STORAGE" -lt "$LOW_STORAGE" ]; then
   ui_print "Low resource device detected, removing large extras"
