@@ -48,8 +48,9 @@ if [ "$SYSTEMASROOT" == "true" ]; then
     TARGETSYSTEM=/dev/block/bootdevice/by-name/system
   fi
   mkdir -p /system_root
-  if mount -o rw $TARGETSYSTEM /system_root && mount /system_root/system /system; then
+  if mount -o rw $TARGETSYSTEM /system_root; then
     ui_print "/system mounted"
+    SYSTEM=/system_root/system
   else
     ui_print "Could not mount /system! Aborting"
     exit 1
@@ -57,6 +58,7 @@ if [ "$SYSTEMASROOT" == "true" ]; then
 else
   if mount /system; then
     ui_print "/system mounted"
+    SYSTEM=/system
   else
     ui_print "Could not mount /system! Aborting"
     exit 1
@@ -93,7 +95,7 @@ ui_print "Extracting files"
 cd /tmp
 unzip -o "$ZIP"
 exec_util "rm -rf META-INF"
-cd system
+cd $SYSTEM
 
 if [ "$MEM" -lt "$LOWMEM" ] || [ "$STORAGE" -lt "$LOW_STORAGE" ]; then
   ui_print "Low resource device detected, removing large extras"
@@ -128,8 +130,8 @@ for dirs in $DIRS; do
   done
 done
 ui_print "Copying files"
-exec_util "cp --preserve=a -r ./* /system/"
-exec_util "rm -rf /system/priv-app/Provision/"
+exec_util "cp --preserve=a -r ./* $SYSTEM/"
+exec_util "rm -rf $SYSTEM/priv-app/Provision/"
 ui_print "Cleaning up files"
 cd ../
 exec_util "rm -rf system/"
