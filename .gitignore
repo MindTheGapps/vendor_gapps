@@ -1,0 +1,9 @@
+# out directory
+out/
+
+# rro build artifacts
+overlay/**/build/
+overlay/**/dist/
+
+# gapps log
+gapps_log

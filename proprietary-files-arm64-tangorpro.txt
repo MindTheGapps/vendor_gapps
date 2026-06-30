@@ -1,0 +1,1 @@
+product/priv-app/VelvetTitan/VelvetTitan.apk;OVERRIDES=Velvet;PRESIGNED|782eb1875dd7944634899eeb1f8c10dee6456bd9

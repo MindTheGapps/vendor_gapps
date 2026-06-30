@@ -1,0 +1,136 @@
+// Automatically generated file. DO NOT MODIFY
+
+soong_namespace {
+    imports: ["vendor/gapps/common"],
+}
+
+genrule {
+    name: "GmsCore.apk-genrule",
+    out: ["GmsCore.apk"],
+    cmd: "cat $(in) > $(out)",
+    srcs: ["proprietary/product/priv-app/GmsCore/GmsCore.apk.00", "proprietary/product/priv-app/GmsCore/GmsCore.apk.01"],
+}
+
+android_app_import {
+    name: "GmsCore",
+    owner: "gapps",
+    apk: ":GmsCore.apk-genrule",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    product_specific: true,
+}
+
+android_app_import {
+    name: "MarkupGoogle_v2",
+    owner: "gapps",
+    apk: "proprietary/product/app/MarkupGoogle_v2/MarkupGoogle_v2.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+}
+
+android_app_import {
+    name: "Phonesky",
+    owner: "gapps",
+    apk: "proprietary/product/priv-app/Phonesky/Phonesky.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    product_specific: true,
+}
+
+android_app_import {
+    name: "SetupWizard",
+    owner: "gapps",
+    apk: "proprietary/system_ext/priv-app/SetupWizard/SetupWizard.apk",
+    overrides: ["Provision"],
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    system_ext_specific: true,
+}
+
+android_app_import {
+    name: "SpeechServicesByGoogle",
+    owner: "gapps",
+    apk: "proprietary/product/app/SpeechServicesByGoogle/SpeechServicesByGoogle.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+}
+
+genrule {
+    name: "Velvet.apk-genrule",
+    out: ["Velvet.apk"],
+    cmd: "cat $(in) > $(out)",
+    srcs: ["proprietary/product/priv-app/Velvet/Velvet.apk.00", "proprietary/product/priv-app/Velvet/Velvet.apk.01", "proprietary/product/priv-app/Velvet/Velvet.apk.02"],
+}
+
+android_app_import {
+    name: "Velvet",
+    owner: "gapps",
+    apk: ":Velvet.apk-genrule",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    product_specific: true,
+}
+
+genrule {
+    name: "VelvetTitan.apk-genrule",
+    out: ["VelvetTitan.apk"],
+    cmd: "cat $(in) > $(out)",
+    srcs: ["proprietary/product/priv-app/VelvetTitan/VelvetTitan.apk.00", "proprietary/product/priv-app/VelvetTitan/VelvetTitan.apk.01", "proprietary/product/priv-app/VelvetTitan/VelvetTitan.apk.02", "proprietary/product/priv-app/VelvetTitan/VelvetTitan.apk.03", "proprietary/product/priv-app/VelvetTitan/VelvetTitan.apk.04"],
+}
+
+android_app_import {
+    name: "VelvetTitan",
+    owner: "gapps",
+    apk: ":VelvetTitan.apk-genrule",
+    overrides: ["Velvet"],
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    product_specific: true,
+}
+
+android_app_import {
+    name: "talkback",
+    owner: "gapps",
+    apk: "proprietary/product/app/talkback/talkback.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libjni_latinimegoogle",
+    srcs: ["proprietary/product/lib64/libjni_latinimegoogle.so"],
+    prefer: true,
+    product_specific: true,
+}
