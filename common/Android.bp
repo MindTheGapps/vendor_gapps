@@ -1,0 +1,237 @@
+// Automatically generated file. DO NOT MODIFY
+
+soong_namespace {
+}
+
+android_app_import {
+    name: "AndroidAutoStub",
+    owner: "gapps",
+    apk: "proprietary/product/priv-app/AndroidAutoStub/AndroidAutoStub.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    product_specific: true,
+}
+
+android_app_import {
+    name: "GoogleCalendarSyncAdapter",
+    owner: "gapps",
+    apk: "proprietary/product/app/GoogleCalendarSyncAdapter/GoogleCalendarSyncAdapter.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+}
+
+android_app_import {
+    name: "GoogleContactsSyncAdapter",
+    owner: "gapps",
+    apk: "proprietary/product/app/GoogleContactsSyncAdapter/GoogleContactsSyncAdapter.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+}
+
+android_app_import {
+    name: "GoogleFeedback",
+    owner: "gapps",
+    apk: "proprietary/system_ext/priv-app/GoogleFeedback/GoogleFeedback.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    system_ext_specific: true,
+}
+
+android_app_import {
+    name: "GooglePartnerSetup",
+    owner: "gapps",
+    apk: "proprietary/product/priv-app/GooglePartnerSetup/GooglePartnerSetup.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    product_specific: true,
+}
+
+android_app_import {
+    name: "GoogleRestore",
+    owner: "gapps",
+    apk: "proprietary/product/priv-app/GoogleRestore/GoogleRestore.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    product_specific: true,
+}
+
+android_app_import {
+    name: "GoogleServicesFramework",
+    owner: "gapps",
+    apk: "proprietary/system_ext/priv-app/GoogleServicesFramework/GoogleServicesFramework.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    system_ext_specific: true,
+}
+
+android_app_import {
+    name: "PrebuiltExchange3Google",
+    owner: "gapps",
+    apk: "proprietary/product/app/PrebuiltExchange3Google/PrebuiltExchange3Google.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+}
+
+android_app_import {
+    name: "Wellbeing",
+    owner: "gapps",
+    apk: "proprietary/product/priv-app/Wellbeing/Wellbeing.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    product_specific: true,
+}
+
+dex_import {
+    name: "com.google.android.dialer.support",
+    owner: "gapps",
+    jars: ["proprietary/product/framework/com.google.android.dialer.support.jar"],
+    product_specific: true,
+}
+
+prebuilt_etc {
+    name: "allowed_apex_com.google.android.gmssystem.xml",
+    src: "proprietary/product/etc/sysconfig/allowed_apex_com.google.android.gmssystem.xml",
+    relative_install_path: "sysconfig",
+    filename_from_src: true,
+    product_specific: true,
+}
+
+prebuilt_etc {
+    name: "com.google.android.dialer.support.xml",
+    src: "proprietary/product/etc/permissions/com.google.android.dialer.support.xml",
+    relative_install_path: "permissions",
+    filename_from_src: true,
+    product_specific: true,
+}
+
+prebuilt_etc {
+    name: "d2d_cable_migration_feature.xml",
+    src: "proprietary/product/etc/sysconfig/d2d_cable_migration_feature.xml",
+    relative_install_path: "sysconfig",
+    filename_from_src: true,
+    product_specific: true,
+}
+
+prebuilt_etc {
+    name: "default-permissions-google.xml",
+    src: "proprietary/product/etc/default-permissions/default-permissions-google.xml",
+    relative_install_path: "default-permissions",
+    filename_from_src: true,
+    product_specific: true,
+}
+
+prebuilt_etc {
+    name: "default-permissions-mtg.xml",
+    src: "proprietary/product/etc/default-permissions/default-permissions-mtg.xml",
+    relative_install_path: "default-permissions",
+    filename_from_src: true,
+    product_specific: true,
+}
+
+prebuilt_etc {
+    name: "gapps.rc",
+    src: "proprietary/product/etc/init/gapps.rc",
+    relative_install_path: "init",
+    filename_from_src: true,
+    product_specific: true,
+}
+
+prebuilt_etc {
+    name: "gms_fsverity_cert.der",
+    src: "proprietary/product/etc/security/fsverity/gms_fsverity_cert.der",
+    relative_install_path: "security/fsverity",
+    filename_from_src: true,
+    product_specific: true,
+}
+
+prebuilt_etc {
+    name: "google-hiddenapi-package-allowlist.xml",
+    src: "proprietary/product/etc/sysconfig/google-hiddenapi-package-allowlist.xml",
+    relative_install_path: "sysconfig",
+    filename_from_src: true,
+    product_specific: true,
+}
+
+prebuilt_etc {
+    name: "google.xml",
+    src: "proprietary/product/etc/sysconfig/google.xml",
+    relative_install_path: "sysconfig",
+    filename_from_src: true,
+    product_specific: true,
+}
+
+prebuilt_etc {
+    name: "privapp-permissions-google-product.xml",
+    src: "proprietary/product/etc/permissions/privapp-permissions-google-product.xml",
+    relative_install_path: "permissions",
+    filename_from_src: true,
+    product_specific: true,
+}
+
+prebuilt_etc {
+    name: "privapp-permissions-google-system_ext.xml",
+    src: "proprietary/system_ext/etc/permissions/privapp-permissions-google-system_ext.xml",
+    relative_install_path: "permissions",
+    filename_from_src: true,
+    system_ext_specific: true,
+}
+
+prebuilt_etc {
+    name: "privapp-permissions-mtg.xml",
+    src: "proprietary/product/etc/permissions/privapp-permissions-mtg.xml",
+    relative_install_path: "permissions",
+    filename_from_src: true,
+    product_specific: true,
+}
+
+prebuilt_etc {
+    name: "sysconfig-mtg.xml",
+    src: "proprietary/product/etc/sysconfig/sysconfig-mtg.xml",
+    relative_install_path: "sysconfig",
+    filename_from_src: true,
+    product_specific: true,
+}
+
+prebuilt_etc {
+    name: "wellbeing.xml",
+    src: "proprietary/product/etc/sysconfig/wellbeing.xml",
+    relative_install_path: "sysconfig",
+    filename_from_src: true,
+    product_specific: true,
+}

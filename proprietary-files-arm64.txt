@@ -1,0 +1,3 @@
+product/apex/com.google.android.gmssystem.prodvic.apex;APPS=PrebuiltGmsCoreVic
+product/lib64/libjni_latinimegoogle.so|08ca8391a1816da0c417a3882e72dabb4091fd3c
+product/priv-app/Phonesky/Phonesky.apk;PRESIGNED

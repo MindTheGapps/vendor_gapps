@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <!-- Allow GMS System, a 1P non-mainline module APEX, to install automatic updates from Play using the vendor codepath. -->
+    <allowed-vendor-apex package="com.google.android.gmssystem" installerPackage="com.android.vending" />
+    <!--
+        This is added to ensure Play Store can update GMS APEX, even on form factors
+        that don't use mainline. (Note that we do not specify isModuleInstaller=true
+        here, so this entry does not enable mainline module updates.)
+     -->
+    <whitelisted-staged-installer package="com.android.vending" />
+</config>

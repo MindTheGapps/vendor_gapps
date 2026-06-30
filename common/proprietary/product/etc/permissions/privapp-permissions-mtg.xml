@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <privapp-permissions package="com.google.android.googlequicksearchbox">
+        <permission name="android.permission.ACCESS_CONTEXT_HUB"/>
+        <permission name="android.permission.CONTROL_DEVICE_LIGHTS"/>
+        <permission name="android.permission.GLOBAL_SEARCH"/>
+        <permission name="android.permission.QUERY_USERS"/>
+        <permission name="android.permission.READ_DREAM_STATE"/>
+        <permission name="android.permission.WRITE_DREAM_STATE"/>
+    </privapp-permissions>
+</permissions>

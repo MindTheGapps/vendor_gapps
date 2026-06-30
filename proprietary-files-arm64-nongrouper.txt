@@ -1,0 +1,6 @@
+product/app/MarkupGoogle_v2/MarkupGoogle_v2.apk;PRESIGNED|333aad7d64732505438be846b9f84215b7b8a4a1
+product/app/SpeechServicesByGoogle/SpeechServicesByGoogle.apk;PRESIGNED
+product/app/talkback/talkback.apk;PRESIGNED
+product/priv-app/Velvet/Velvet.apk;PRESIGNED
+
+system_ext/priv-app/SetupWizard/SetupWizard.apk;OVERRIDES=Provision;PRESIGNED

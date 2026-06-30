@@ -1,0 +1,4 @@
+android_app {
+    name: "PrebuiltGmsCoreVic",
+    sdk_version: "system_current",
+}
