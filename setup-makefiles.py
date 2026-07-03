@@ -280,6 +280,9 @@ def generate(targets: list[GappsTarget]) -> None:
         packages = parse_proprietary_files(
             target.name, f"proprietary-files-{target.name}.txt"
         )
+        packages_mtg = parse_proprietary_files(
+            target.name, f"proprietary-files-{target.name}-mtg.txt"
+        )
         packages_nongrouper = parse_proprietary_files(
             target.name, f"proprietary-files-{target.name}-nongrouper.txt"
         )
@@ -287,7 +290,7 @@ def generate(targets: list[GappsTarget]) -> None:
             target.name, f"proprietary-files-{target.name}-tangorpro.txt"
         )
         packages_all = sorted(
-            packages + packages_nongrouper + packages_tangorpro,
+            packages + packages_mtg + packages_nongrouper + packages_tangorpro,
             key=lambda x: (x.soong_module, x.name),
         )
 
@@ -322,6 +325,10 @@ def generate(targets: list[GappsTarget]) -> None:
             if packages:
                 f.write("\n")
                 write_list("PRODUCT_PACKAGES", [x.name for x in packages])
+
+            if packages_mtg:
+                f.write("\n")
+                write_list("PRODUCT_PACKAGES", [x.name for x in packages_mtg])
 
             if packages_nongrouper:
                 f.write("\n")

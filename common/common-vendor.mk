@@ -17,13 +17,15 @@ PRODUCT_PACKAGES += \
     com.google.android.dialer.support.xml \
     d2d_cable_migration_feature.xml \
     default-permissions-google.xml \
-    default-permissions-mtg.xml \
-    gapps.rc \
     gms_fsverity_cert.der \
     google-hiddenapi-package-allowlist.xml \
     google.xml \
     privapp-permissions-google-product.xml \
-    privapp-permissions-google-system_ext.xml \
+    privapp-permissions-google-system_ext.xml
+
+PRODUCT_PACKAGES += \
+    default-permissions-mtg.xml \
+    gapps.rc \
     privapp-permissions-mtg.xml \
     sysconfig-mtg.xml
 

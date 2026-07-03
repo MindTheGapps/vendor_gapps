@@ -1,0 +1,4 @@
+product/etc/default-permissions/default-permissions-mtg.xml
+product/etc/init/gapps.rc
+product/etc/permissions/privapp-permissions-mtg.xml
+product/etc/sysconfig/sysconfig-mtg.xml
