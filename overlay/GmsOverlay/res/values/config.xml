@@ -96,7 +96,7 @@
     <string name="config_defaultSupervisionProfileOwnerComponent" translatable="false">com.google.android.gms/.kids.account.receiver.ProfileOwnerReceiver</string>
 
     <!-- The package name of the default system supervision package. -->
-    <string name="config_systemSupervision" translatable="false">com.google.android.gms.supervision</string>
+    <string name="config_systemSupervision" translatable="false">com.google.android.gms</string>
 
     <!-- The array of account types that accounts in any of these can be set as the default account
          for new raw contacts. -->
