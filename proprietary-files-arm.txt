@@ -1,3 +1,4 @@
 product/apex/com.google.android.gmssystem.prodvic.apex;APPS=PrebuiltGmsCoreVic
+product/priv-app/FamilyLinkParentalControls/FamilyLinkParentalControls.apk;PRESIGNED
 product/lib/libjni_latinimegoogle.so|cff48167aeff1d47e624b100138a8ad01cb2967b
 product/priv-app/Phonesky/Phonesky.apk;PRESIGNED
