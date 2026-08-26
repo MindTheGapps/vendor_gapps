@@ -3,6 +3,7 @@ product/app/GoogleContactsSyncAdapter/GoogleContactsSyncAdapter.apk;PRESIGNED|ec
 product/app/PrebuiltExchange3Google/PrebuiltExchange3Google.apk;PRESIGNED|043cb74798bf137d2dd1a69c7bca0a6702ad88a2
 
 product/priv-app/AndroidAutoStub/AndroidAutoStub.apk;PRESIGNED
+product/priv-app/FamilyLinkParentalControls/FamilyLinkParentalControls.apk;PRESIGNED
 product/priv-app/GooglePartnerSetup/GooglePartnerSetup.apk;PRESIGNED
 
 product/framework/com.google.android.dialer.support.jar;PRESIGNED
