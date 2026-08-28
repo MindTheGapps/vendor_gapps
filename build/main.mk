@@ -1,7 +1,7 @@
 # build paths
 TOPDIR := .
 BUILD_SYSTEM := $(TOPDIR)/build
-BUILD_GAPPS := $(BUILD_SYSTEM)/gapps.sh
+BUILD_GAPPS := $(BUILD_SYSTEM)/gapps.py
 OUTDIR := $(TOPDIR)/out
 LOG_BUILD := /tmp/gapps_log
 
@@ -11,8 +11,8 @@ distclean:
 
 gapps_arm:
 	@echo "Compiling GApps for arm..."
-	@bash $(BUILD_GAPPS) arm 2>&1
+	@$(BUILD_GAPPS) arm 2>&1
 
 gapps_arm64:
 	@echo "Compiling GApps for arm64..."
-	@bash $(BUILD_GAPPS) arm64 2>&1
+	@$(BUILD_GAPPS) arm64 2>&1
