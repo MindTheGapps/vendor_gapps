@@ -65,6 +65,19 @@
      -->
     <string name="config_defaultWellbeingPackage" translatable="false">com.google.android.apps.wellbeing</string>
 
+    <!-- The component name, flattened to a string, for the system's credential manager
+      hybrid service. This service allows credential retrieval and storage from, and to
+      remote devices.
+
+     This service must be trusted, as it can be activated without explicit consent of the user.
+     If no service with the specified name exists on the device, credential manager
+     will still work, but remote credential retrieval and storage will not be offered to
+     the user.
+
+     See android.credentials.CredentialManager
+    -->
+    <string name="config_defaultCredentialManagerHybridService" translatable="false">com.google.android.gms/.auth.api.credentials.credman.service.RemoteService</string>
+
     <!-- The component name(s), flattened to a string, for the system's credential manager
       provider services. These services allow retrieving and storing credentials.
 
