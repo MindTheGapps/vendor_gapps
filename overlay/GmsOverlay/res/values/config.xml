@@ -127,12 +127,12 @@
          encoding of the trusted certificate using the SHA-256 digest algorithm. -->
     <string-array name="config_setContactsDefaultAccountKnownSigners">
         <!-- The package signature hash (SHA-256) for the Google Play Services
-            (com.google.android.gms, release version) -->
+             (com.google.android.gms, release version) -->
         <item>F0FD6C5B410F25CB25C3B53346C8972FAE30F8EE7411DF910480AD6B2D60DB83</item>
     </string-array>
 
     <!-- Component name that accepts settings intents for saved devices.
-             Used by FastPairSettingsFragment. -->
+              Used by FastPairSettingsFragment. -->
     <string name="config_defaultNearbyFastPairSettingsDevicesComponent" translatable="false">com.google.android.gms/com.google.android.gms.nearby.discovery.devices.SavedDevicesSettingsActivity</string>
 
     <!-- Name of the package responsible to handle Contextual Search. -->
@@ -146,4 +146,7 @@
 
     <!-- The key containing the branching boolean for legacy Search. -->
     <string name="config_defaultContextualSearchLegacyEnabled" translatable="false">omni.enable_vis</string>
+
+    <!-- Flag indicating which package name can access DeviceConfig table -->
+    <string name="config_deviceConfiguratorPackageName" translatable="false">com.google.android.gms</string>
 </resources>
